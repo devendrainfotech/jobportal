@@ -7,4 +7,5 @@ include_once './Development/commonfiles/searchbar.php';
 	<input type="email" name="userEmailid" placeholder="enter the username" required=""/><br />
 	<input type="password" name="userPassword" placeholder="enter the password" required=""/><br />
 	<input type="submit" name="userLoginSubmit" value="Sign In" />
+	<span> <?php echo error; ?></span>
 </form>

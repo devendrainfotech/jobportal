@@ -19,5 +19,6 @@ if(mysqli_fetch_assoc($session_result) > 0){
 if(!isset($login_session)){
 	mysqli_close($conn);
 	header("location: index.php");
+	echo "session not found from page usersession.php";
 }
 ?>
