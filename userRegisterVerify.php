@@ -1,10 +1,12 @@
 <?php
+	if(isset($_POST["userSubmitForm"])){
 	$useremail =  $_POST["userEmailId"];
 	$userpass =  $_POST["userPassword"];
 	$usercnfpass =  $_POST["userConfirmPassword"];
 	$userstate =  $_POST["userState"];
 	$usercity =  $_POST["userCity"];
 	$usermbno =  $_POST["userMobileNumber"];
+	}
 	
 	include './Development/commonfiles/connection.php';	
 	// echo "$useremail"; ==> for checking purpose....
@@ -43,6 +45,8 @@
 		echo "<center><h1> You have Been Registered Sucessfully </h1> </center>";
     	echo "<hr>";
     	echo "<center><h3><a href ='http://www.jobportal.me.ht/'>Click here</a> to Login Yourself :)</h3></center>";
+		//sleep(5);
+		//header("location: http://localhost/jobportal");
 		} else {
     	echo "Error: " . $sqlquery . "<br>" . mysqli_error($conn);
 		}

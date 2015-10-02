@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="generator" content="Bootply">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="icon" href="Design/Images/icons/tabicon.png" />
 		
 		<link type="text/css" href="Design/manual/css/jquery-ui.min.css" rel="stylesheet"/>
 		<!--<link type="text/css" href="Design/bootstrap/css/bootstrap-theme.css" rel="stylesheet">-->

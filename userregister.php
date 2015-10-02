@@ -8,22 +8,22 @@ include_once './Development/commonfiles/searchbar.php';
 		var y = document.userForm.userConfirmPassword.value;
 		var z = document.userForm.userMobileNumber.value;
 			if(x.length < 8 || y.length < 8){
-				alert("password must be at least 8 character long");
+				document.getElementById("error_message").innerHTML = "*Error must be 8 character Long";
 				document.userForm.userPassword.focus();
 				return false;
 			}
 			else if(x !== y){
-				alert("password must match!!!");
+				document.getElementById("error_message").innerHTML = "*Both the Passwords must match";
 				document.userForm.userPassword.focus();
 				return false;
 			}
 			else if(isNaN(z) === true){
-				alert("mobile number must be in numbers...");
+				document.getElementById("error_message").innerHTML = "*Mobile Number must be in numbers";
 				document.userForm.userMobileNumber.focus();
 				return false;
 			}
 			else if(z.length !== 10){
-				alert("mobile number must be 10 digit long...");
+				document.getElementById("error_message").innerHTML = "*Mobile number must be 10 Digit Long";
 				document.userForm.userMobileNumber.focus();
 				return false;
 			}
@@ -178,6 +178,14 @@ include_once './Development/commonfiles/searchbar.php';
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <div class="col-md-4">
+    <p id="error_message" style="color:red;"></p>
+  </div>
+</div>
+		<p id="error_message" style="color:red;"></p>
+	
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">

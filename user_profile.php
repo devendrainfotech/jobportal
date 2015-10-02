@@ -1,4 +1,8 @@
 <?php
+	include_once 'userSession.php'; // user session for the verifying that user exist or not....
+?>
+
+<?php
 	include_once './Development/commonfiles/header.php';
 ?>
 <head>
