@@ -43,6 +43,7 @@
           </button>
           <a class="navbar-brand" href="index.php">Job Portal</a>
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="index.php">Home</a></li>-->
@@ -62,21 +63,7 @@
             </li>
           </ul>
           
-<?php 
-	echo '  
 		<ul class="nav navbar-nav navbar-right setting-the-navbar-right">
-		';
-		
-		if( isset($_COOKIE["UserId"]) ){
-			//header("location:UserProfile.php");
-			echo '  				
-				<li><a href="#"><img src="Design/Images/loading.gif"/></a><a href="#">Dalwadi Dilip</a></li>
-				';
-		}
-		else{
-		
-		echo '
-            <!-- Login Button Coding Start Here -->
             <li>
             	<div class="btn-group">
 			  	<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,14 +71,15 @@
 			  	</button>
 			  	<ul class="dropdown-menu">
 			  		<div>
-			  	<form class="setting-the-dropdown-menu-margin" Method="POST" action="CheckLogIn.php">
+
+			  	<form class="setting-the-dropdown-menu-margin" method="post" action="userLoginVerify.php">
     				<div class="form-group">
 				    <!--<label for="exampleInputEmail1">Email Address:</label>-->
-				    <input type="email" class="form-control" id="exampleInputEmail1" name="txtEmailId" placeholder="Enter the Email id">
+				    <input type="email" class="form-control" id="exampleInputEmail1" name="userEmailid" placeholder="Enter the Email id" required="">
 				  </div>
 				  <div class="form-group">
 				    <!--<label for="exampleInputPassword1">Password:</label>-->
-				    <input type="password" class="form-control" id="exampleInputPassword1" name="txtPassword" placeholder="Password">
+				    <input type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
 				  </div>
 				  <div>
 				    <label>
@@ -99,7 +87,8 @@
 				    </label>
 				  </div>
 				  <li role="separator" class="divider"></li>
-				  <center><input type="submit" class="btn btn-success" value="Submit"/></center>
+				  <center><input type="submit" name="userLoginSubmit" class="btn btn-success" value="Sign In"/></center>
+				  <span><?php echo $error; ?></span>
 				</div>
     			</form>
   				</ul>
@@ -117,12 +106,8 @@
 				<!--<li><a href="../navbar/">Default</a></li>
 				<li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
 				<li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
-		  ';
-		  }
-	echo '  
+		    
           </ul>
-		';
-	?>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
