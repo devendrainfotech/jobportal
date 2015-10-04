@@ -83,12 +83,17 @@
 				  </div>
 				  <div>
 				    <label>
+				      <input type="checkbox" name="rememberme" value="1"> Remember me
+				    </label>
+				  </div>
+				  <div>
+				    <label>
 				      <a>Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				  <li role="separator" class="divider"></li>
 				  <center><input type="submit" name="userLoginSubmit" class="btn btn-success" value="Sign In"/></center>
-				  <span><?php echo $error; ?></span>
+				  <!--<span><?php echo $error; ?></span>-->
 				</div>
     			</form>
   				</ul>

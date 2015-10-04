@@ -1,7 +1,7 @@
 <?php
-	include_once 'userSession.php'; // user session for the verifying that user exist or not....
+	include_once 'userSession.php'; // interactive user such as name and all user session for the verifying that user exist or not....
+	include_once 'usercookie.php';
 ?>
-
 <?php
 	include_once './Development/commonfiles/header.php';
 ?>
@@ -77,3 +77,8 @@ $(".btn-pref .btn").click(function () {
         </div>
       </div>
     </div>
+    <!--<?php
+    $var = $_COOKIE['auth_username'];
+	echo $var;
+	echo "signed up";
+    ?>-->
