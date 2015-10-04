@@ -2,11 +2,11 @@
 include_once 'userLoginVerify.php';// includes the login script
 if(isset($_COOKIE['auth_username']) && isset($_COOKIE['auth_password'])){
 	header("location: user_profile.php");
-	echo "from the cookie index page";
+//	echo "from the cookie index page";
 }
-else if(isset($_SESSION['login_user'])){
+if(isset($_SESSION['login_user'])){
 	header("location: user_profile.php"); // make the homepage of the user and redirect this page to the user side...
-	echo "from the index with session";
+//	echo "from the index with session";
 	//make the user homepage; and redirect the user to his own homepage...
 	//echo"workin!!!";
 }

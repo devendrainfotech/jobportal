@@ -1,6 +1,5 @@
 <?php
 include_once './Development/commonfiles/connection.php';
-
 session_start();
 $usercheck = $_SESSION['login_user']; // checking the session is still exist or not 
 $session_query = "SELECT `username` FROM `tblloginmst` WHERE `username` = '$usercheck'";
@@ -14,7 +13,7 @@ if(mysqli_fetch_assoc($session_result) > 0){
 if(!isset($login_session)){// checking the login session variable have a value or not if its NULL so the connection will be cut of from the database... 
 	mysqli_close($conn);
 	header("location: index.php");
-	session_destroy();// destroy the session
+	// destroy the session
 	//echo "session not found from page usersession.php";
 }
 ?>
