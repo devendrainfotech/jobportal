@@ -1,12 +1,10 @@
-
-	<?php
+<?php
 	//session_start();// Session has already been started so it will make inconvienece...
 		include_once 'userSession.php';
 		include_once './Development/commonfiles/header.php';
 		//include_once './Development/commonfiles/searchbar.php';
 		//include_once './Development/commonfiles/footer.php';
 	?>
-	
 	<div class="aboutus-settings">
 		<div class="container">
 		<div class="row admin-about-details">

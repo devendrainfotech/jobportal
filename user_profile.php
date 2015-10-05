@@ -29,7 +29,7 @@ $(".btn-pref .btn").click(function () {
             <img alt="" src="Design/Images/dev.jpg">
         </div>
         <div class="card-info"> <span class="card-title"><?php echo $login_session; ?></span>
-        	<span><a href="logout.php">LOG out</a></span>
+        	<!--<span><a href="logout.php">LOG out</a></span>-->
         </div>
     </div>
  

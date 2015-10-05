@@ -39,7 +39,7 @@
 					header("location: user_profile.php");
 				}
 			else{
-				$error = "username or password is invalid";
+				echo  "username or password is invalid";
 			}
 		//	$var =  $_COOKIE['auth_username'];
 		//	echo $var;

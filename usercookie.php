@@ -5,7 +5,7 @@ $user_pass_cookie = $_COOKIE['auth_password']; // md5 generated key
 //echo $user_pass_cookie;
 //exit;
 $cookie_query = "SELECT `username`,`user_password` FROM `tblloginmst` WHERE `username` = '$user_name_cookie'";
-$cookie_result = mysqli_query($conn, $cookie_query);
+$cookie_result = mysqli_query($conn,$cookie_query);
 //$cookie_row = mysqli_fetch_assoc($cookie_result);
 $cookie_row = mysqli_num_rows($cookie_result);
 //-----------------------------------------------------
