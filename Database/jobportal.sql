@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2015 at 05:27 PM
+-- Generation Time: Oct 12, 2015 at 06:36 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -36,6 +36,10 @@ CREATE TABLE IF NOT EXISTS `searchdetails` (
 --
 
 INSERT INTO `searchdetails` (`Keyword`, `Location`) VALUES
+('computer', 'ahmedabad'),
+('computer', 'mumbai'),
+('developer', 'ahmedabad'),
+('developer', 'pune'),
 ('computer', 'ahmedabad'),
 ('computer', 'mumbai'),
 ('developer', 'ahmedabad'),
@@ -144,10 +148,12 @@ CREATE TABLE IF NOT EXISTS `tbljobseekermst` (
   `create_date` date NOT NULL,
   `isactive` tinyint(1) NOT NULL,
   `firstname` varchar(30) NOT NULL,
-  `middlename` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
+  `mobilenumber` int(12) NOT NULL,
   `dateofbirth` date NOT NULL,
   `resume_headline` varchar(200) NOT NULL,
+  `city` varchar(30) NOT NULL,
+  `address` varchar(50) NOT NULL,
   `totalexpyear` smallint(6) NOT NULL,
   `totalexpmonth` smallint(6) NOT NULL,
   `functional_aera` varchar(40) NOT NULL COMMENT 'Or Industry ',
@@ -158,6 +164,9 @@ CREATE TABLE IF NOT EXISTS `tbljobseekermst` (
   `Preferred_designation` varchar(40) NOT NULL,
   `prefrred_location` varchar(30) NOT NULL,
   `key_skill` varchar(30) NOT NULL,
+  `role` varchar(30) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `pincode` int(10) NOT NULL,
   `profile_summary` varchar(400) NOT NULL,
   `attachment` tinyint(1) NOT NULL,
   `job_type` char(10) NOT NULL,
@@ -168,7 +177,14 @@ CREATE TABLE IF NOT EXISTS `tbljobseekermst` (
   `login_id` int(7) NOT NULL,
   `contact_id` int(7) NOT NULL,
   `photo_id` int(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Job seeker application information table';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Job seeker application information table';
+
+--
+-- Dumping data for table `tbljobseekermst`
+--
+
+INSERT INTO `tbljobseekermst` (`jobseeker_id`, `create_date`, `isactive`, `firstname`, `lastname`, `mobilenumber`, `dateofbirth`, `resume_headline`, `city`, `address`, `totalexpyear`, `totalexpmonth`, `functional_aera`, `current_designation`, `current_company`, `current_location`, `current_salary`, `Preferred_designation`, `prefrred_location`, `key_skill`, `role`, `emailid`, `pincode`, `profile_summary`, `attachment`, `job_type`, `employee_type`, `language1`, `language2`, `language3`, `login_id`, `contact_id`, `photo_id`) VALUES
+(1, '0000-00-00', 0, 'asdf', 'hjdgckjd', 0, '0000-00-00', 'Your Resume Headline is the first thing Recruiter will see.', '', '123456', 0, 0, '0', '', '', '', '0', '', '', 'nhk dfkf', '3', 'dalwadi.dilip@gmail.com', 1234567890, '', 0, '', 0, '', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -182,10 +198,24 @@ CREATE TABLE IF NOT EXISTS `tblloginmst` (
   `fullname` varchar(50) NOT NULL,
   `username` varchar(30) NOT NULL,
   `user_password` varchar(50) NOT NULL,
+  `user_state` varchar(30) NOT NULL,
+  `user_city` varchar(30) NOT NULL,
   `sec_question` varchar(100) NOT NULL,
   `sec_asnwer` varchar(50) NOT NULL,
   `rec_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='login table information';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COMMENT='login table information';
+
+--
+-- Dumping data for table `tblloginmst`
+--
+
+INSERT INTO `tblloginmst` (`login_id`, `create_date`, `fullname`, `username`, `user_password`, `user_state`, `user_city`, `sec_question`, `sec_asnwer`, `rec_status`) VALUES
+(5, '0000-00-00', '', 'dalwadi.dilip@gmail.com', '1234567890', 'Daman and Diu', 'Vadodara', '', '', 0),
+(6, '0000-00-00', '', 'dalwadi.dilip1@gmail.com', '1234567890', 'Andaman and Nicobar Islands', '', '', '', 0),
+(7, '0000-00-00', '', 'dalwadi.dilip5@gmail.com', '1234567890', 'Andaman and Nicobar Islands', '', '', '', 0),
+(8, '0000-00-00', '', 'dalwadi.dilipkl@gmail.com', 'asdfghjkl', 'Andaman and Nicobar Islands', '', '', '', 0),
+(9, '0000-00-00', '', 'devendrainfotech@gmail.com', '1234567890', 'Andaman and Nicobar Islands', '', '', '', 0),
+(10, '0000-00-00', '', 'ac@g.com', 'a1111111', 'Sikkim', 'Aurangabad', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -331,12 +361,12 @@ MODIFY `Autoid` int(7) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tbljobseekermst`
 --
 ALTER TABLE `tbljobseekermst`
-MODIFY `jobseeker_id` int(7) NOT NULL AUTO_INCREMENT;
+MODIFY `jobseeker_id` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tblloginmst`
 --
 ALTER TABLE `tblloginmst`
-MODIFY `login_id` int(7) NOT NULL AUTO_INCREMENT;
+MODIFY `login_id` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tblrecruitermst`
 --

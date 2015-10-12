@@ -9,6 +9,7 @@
 		<link type="text/css" href="Design/manual/css/jquery-ui.min.css" rel="stylesheet"/>
 		<!--<link type="text/css" href="Design/bootstrap/css/bootstrap-theme.css" rel="stylesheet">-->
 		<link type="text/css" href="Design/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link type="text/css" href="Design/manual/css/footer-distri.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
 				
 		<script type="text/javascript" src="Design/Jquery/jquery-1.11.3.min.js"></script>

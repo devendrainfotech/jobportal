@@ -1,5 +1,49 @@
+.profile-heading{
+	text-align:center;
+	background-color:#0FB492;
+	padding:10px;
+	border-radius: 10px;
+	color:white;
+	overflow: hidden;
+}
+
+
+
+
+#myCarousel{
+	-webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+}
+.company-logo-allignment{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.logo-showcase{
+	/*margin-bottom: 10px;*/
+	/*background-color:#0E9FB4 ;*/
+}
+.logo-showcase-out{
+	background-color:#0E9FB4;
+	padding-top: 5px;
+	padding-bottom:15px;
+	margin-bottom: 50px;
+	color:#fff;
+	-webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+}
+.logo-showcase-out h2{
+	border-bottom: 2px solid white;
+}
+div.col-lg-4{
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top:50px;	
+}
 body{
 	color:#000;
+	background-color:#F5F5F5;
 }
 /* header bar coding Start*/
 .setting-the-navbar-right{

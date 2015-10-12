@@ -26,6 +26,159 @@ if(isset($_SESSION['login_user'])){
 	<input type="submit" name="userLoginSubmit" value="Sign In" />
 	<span> <?php echo $error; ?></span>
 </form>-->
+<!-- CArousel starts from here..... -->
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li class="active" data-target="#myCarousel" data-slide-to="1"></li>
+        <li class="" data-target="#myCarousel" data-slide-to="2"></li>
+        <li class="" data-target="#myCarousel" data-slide-to="3"></li>
+        <li class="" data-target="#myCarousel" data-slide-to="4"></li>
+        <li class="" data-target="#myCarousel" data-slide-to="5"></li>
+     </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item">
+          <img class="first-slide" src="Design/Images/carousel/image1-carousel.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img class="first-slide" src="Design/Images/carousel/carousel-image2.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img class="first-slide" src="Design/Images/carousel/carousel-image3.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img class="first-slide" src="Design/Images/carousel/carousel-image4.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="item active">
+          <img class="second-slide" src="Design/Images/carousel/carousel-image5.png" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide img-responsive" src="Design/Images/carousel/carousel-image7.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- .... carousel wii be end at here .... -->
+    <!-- marketing strarts from here.... --->
+    <div class="container">
+    <div class="row" style="">
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+      </div>
+      <!--marketing ends here .... -->
+      <!--Company profile starts from here ...  -->
+      <div class="logo-showcase-out">
+      			<h2>We are Recruiting</h2>
+      <div class="container logo-showcase">
+      	<div class="row company-logo-allignment">
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/IBM.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/Pearson.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/Remington.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/citysprint.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/cyberark.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/google.jpg" class="img-thumbnail"/></div>
+      	</div>
+      	<div class="row company-logo-allignment">
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/infosys.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/intel.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/raymond.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/staples.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/tcs-logo.gif" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/verizon.png" class="img-thumbnail"/></div>
+      	</div>
+      	<div class="row company-logo-allignment">
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/toyota.gif" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/knight-frank.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/ESSAR.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/Samsung.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/WA.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/ford.jpg" class="img-thumbnail"/></div>
+      	</div>
+      	<div class="row company-logo-allignment">
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/nordion.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/infinity.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/hp.jpg" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/hitachi.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/heinemann.png" class="img-thumbnail"/></div>
+      		<div class="col-sm-2"><img src="Design/Images/companylogoes/godrej.gif" class="img-thumbnail"/></div>
+      	</div>
+      </div>
+      </div>
+      <!-- Company profiles ends here .... -->
 <?php
 	//include_once './Development/forms/register_user.php';
 	include_once './Development/commonfiles/footer.php';

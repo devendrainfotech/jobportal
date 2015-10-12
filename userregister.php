@@ -8,7 +8,7 @@ include_once './Development/commonfiles/searchbar.php';
 		var y = document.userForm.userConfirmPassword.value;
 		var z = document.userForm.userMobileNumber.value;
 			if(x.length < 8 || y.length < 8){
-				document.getElementById("error_message").innerHTML = "*Error must be 8 character Long";
+				document.getElementById("error_message").innerHTML = "*Password must be 8 character Long";
 				document.userForm.userPassword.focus();
 				return false;
 			}
@@ -45,13 +45,6 @@ include_once './Development/commonfiles/searchbar.php';
   <input id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
   </div>
 </div>
-
-<script>
-	$( "#emailid" ).autocomplete({
-  		source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ];
-	});
-</script>
-
 <!-- Password input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Enter Password</label>

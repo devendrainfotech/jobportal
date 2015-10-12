@@ -54,5 +54,5 @@
 			</div>
 	
 	<?php
-	//include_once './Development/commonfiles/footer.php';
+	include_once './Development/commonfiles/footer.php';
 	?>
