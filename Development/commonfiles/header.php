@@ -12,7 +12,7 @@
 		<link type="text/css" href="Design/manual/css/footer-distri.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
 				
-		<script type="text/javascript" src="Design/Jquery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="Design/Jquery/jquery-min.js"></script>
 		<script type="text/javascript" src="Design/Jquery/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="Design/bootstrap/js/bootstrap.js"></script>
 
@@ -49,7 +49,7 @@
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="index.php">Home</a></li>-->
             <li class="default"><a href="aboutus.php">About</a></li>
-            <li class="default"><a href="changelog.php">ChangeLog</a></li>
+            <li class="default"><a href="recruiter_registration.php">Recruiter</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Diff. Forms<span class="caret"></span></a>
               <ul class="dropdown-menu">

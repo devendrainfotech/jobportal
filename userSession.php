@@ -8,6 +8,14 @@ $session_result = mysqli_query($conn, $session_query);
 $session_row = mysqli_fetch_assoc($session_result);// my email id in the session_row variable...
 $login_session = $session_row['username'];
 }
+
+if(isset($_SESSION['login_recruiter'])){
+	$reccheck = $_SESSION['login_recruiter'];
+	$session_query = "SELECT `username` FROM `recruiterlogin` WHERE `username` = '$reccheck'";
+	$session_result =mysqli_query($conn, $session_query);
+	$session_row = mysqli_fetch_assoc($session_result);
+	$login_recruiter_session = $session_row['username'];
+}
 /*
 if(mysqli_fetch_assoc($session_result) > 0){
 	$login_session = $session_result['username'];

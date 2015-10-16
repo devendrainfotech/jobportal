@@ -13,8 +13,7 @@
 	function registerValidator($username,$pass,$cnfpass,$mobile){
 		include './Development/commonfiles/connection.php';
 		$query = "SELECT username FROM tblloginmst WHERE username='$username'";
-		$result = mysqli_query($conn,$query);
-		
+		$result = mysqli_query($conn,$query);		
 		if (mysqli_num_rows($result) > 0) {
             //return FALSE;
 				echo "username already exist please choose another one";

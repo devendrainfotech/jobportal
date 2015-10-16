@@ -1,19 +1,25 @@
-.profile-heading{
-	text-align:center;
-	background-color:#0FB492;
-	padding:10px;
-	border-radius: 10px;
-	color:white;
-	overflow: hidden;
+/* for the temparory solution */
+div.carousel-caption:nth-child(1){
+	margin-bottom: 140px;
 }
-
-
-
-
+.header-style{
+	display:inline-block;
+	padding: 10px 10px 10px 25px;
+	background: rgba(51,51,51,0.7) none repeat scroll 0% 0%;
+	border-radius: 10px 10px 0px 0px;
+	border-bottom: 5px solid #F78D12;
+}
 #myCarousel{
 	-webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+}
+.carousel-caption{
+	left:0%;
+	right:0%;
+}
+.carousel-control{
+	z-index: 1000;
 }
 .company-logo-allignment{
 	margin-top: 15px;

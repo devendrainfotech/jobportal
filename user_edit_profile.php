@@ -100,11 +100,11 @@ $(".btn-pref .btn").click(function () {
 			  <label class="col-sm-3 control-label" for="drpIndustry">Function Area / Industry</label>
 			  <div class="col-sm-6">
 				<select id="drpIndustry" name="userFunctionalArea" class="form-control">
-				  <option value="0">IT-Software Development & Services </option>
-				  <option value="1">IT-Hardware & Networking</option>
-				  <option value="2">Banking Sector/Financial Services/Broking</option>
-				  <option value="3">Hotel/Restaurants/Airlines/Travel</option>
-				  <option value="4">Medical/Health Care/Hospital</option>
+				  <option value="IT-Software Development & Services">IT-Software Development & Services </option>
+				  <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
+				  <option value="Banking Sector/Financial Services/Broking">Banking Sector/Financial Services/Broking</option>
+				  <option value="Hotel/Restaurants/Airlines/Travel">Hotel/Restaurants/Airlines/Travel</option>
+				  <option value="Medical/Health Care/Hospital">Medical/Health Care/Hospital</option>
 				  
 				</select>
 				</div>	
@@ -115,11 +115,11 @@ $(".btn-pref .btn").click(function () {
 			  <label class="col-sm-3 control-label" for="drpRole">Role / Designation</label>
 			  <div class="col-sm-6">
 				<select id="drpRole" name="userRole" class="form-control">
-				  <option value="0">Software Developer</option>
-				  <option value="1">Database Administrator</option>
-				  <option value="2">Software Analyst</option>
-				  <option value="3">Department Head /Team Lead/Tech Lead</option>
-				  <option value="4">QA</option>
+				  <option value="Software Developer">Software Developer</option>
+				  <option value="Database Administrator">Database Administrator</option>
+				  <option value="Software Analyst">Software Analyst</option>
+				  <option value="Department Head /Team Lead/Tech Lead">Department Head /Team Lead/Tech Lead</option>
+				  <option value="QA">QA</option>
 				</select>
 				</div>	
 			</div>	
@@ -196,13 +196,13 @@ $(".btn-pref .btn").click(function () {
         </div>
 <!-- ================ tab 2 starts from here.. =====================  -->
         <div class="tab-pane fade in" id="tab2">
-          <form class="form-horizontal" method="post">
+          <form class="form-horizontal" method="post" action="userEditProfileVerify.php">
 		 	
 			<div class="form-group">
 				<label class="col-xs-12 control-label" ><br></label>  
 			  <label class="col-md-3 control-label" for="drpDegree">Degree Name</label>
 			  <div class="col-md-6">
-				<select id="drpDegree" name="drpDegree" class="form-control">
+				<select id="drpDegree" name="userDegree" class="form-control">
 				  <option value="0">SSC</option>
 				  <option value="1">HSC</option>
 				  <option value="2">Basic Graduation</option>
@@ -215,7 +215,7 @@ $(".btn-pref .btn").click(function () {
 			<div class="form-group">
 			  	<label class="col-sm-3 control-label" for="txtSpecialization">Specialization</label>
 			  <div class="col-sm-6">
-				<input id="txtSpecialization" type="text" name="txtSpecialization" placeholder="Enter Specialization" class="form-control" required="" >  
+				<input id="txtSpecialization" type="text" name="userSpecialization" placeholder="Enter Specialization" class="form-control" required="" >  
 				</div>
 			  	
 			</div>	
@@ -223,48 +223,45 @@ $(".btn-pref .btn").click(function () {
 			<div class="form-group">
 			  <label class="col-sm-3 control-label" for="txtUniversity">University Name</label>
 			  <div class="col-sm-2">
-				<input id="txtUniversity" type="text" name="txtUniversity" placeholder="Enter University / Institute Name	" class="form-control" required="" >  
+				<input id="txtUniversity" type="text" name="userUniversity" placeholder="Enter University / Institute Name	" class="form-control" required="" >  
 				</div>
 			  
 			  <label class="col-sm-1 control-label" for="txtUniversity">Year of Passing</label>
 			  <div class="col-sm-3">
-				<select id="drpDegree" name="drpDegree" class="form-control">
-				  <option value="0">2005</option>
-				  <option value="1">2004</option>
-				  <option value="2">2003</option>
-				  <option value="3">2002</option>
-				  <option value="4">2001</option>
-				  <option value="5">2000</option>
-				  <option value="6">1999</option>
-				  <option value="7">1998</option>
-				  <option value="8">1997</option>
-				  <option value="9">1996</option>
-				  <option value="10">1995</option>
+				<select id="drpDegree" name="userPassingYear" class="form-control">
+				  <option value="2005">2005</option>
+				  <option value="2004">2004</option>
+				  <option value="2003">2003</option>
+				  <option value="2002">2002</option>
+				  <option value="2001">2001</option>
+				  <option value="2000">2000</option>
+				  <option value="1999">1999</option>
+				  <option value="1998">1998</option>
+				  <option value="1997">1997</option>
+				  <option value="1996">1996</option>
+				  <option value="1995">1995</option>
 				</select>
 				</div>	
-				
 			 </div>
-			 
-			 
 			<!-- Button (Double) -->
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="btnsave1"></label>
 			  <div class="col-md-8">
-				<button id="btnsave1" name="btnsave1" type="submit"	class="btn btn-primary">Save</button>
+				<button id="btnsave1" name="userEducationSaveButton" type="submit"	class="btn btn-primary">Save</button>
 				<button id="btnclear1" name="btnNext1" type="reset"	 herf="#tab3" class="btn btn-primary">Reset</button>
 			  </div>
 			</div>
 			</form>
         </div>
         <div class="tab-pane fade in" id="tab3">
-          <form class="form-horizontal">
+<form class="form-horizontal" method="post" action="userEditProfileVerify.php">
 <!-- Form Name -->
 <legend style="text-align: center;">Experience Details</legend>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Employer</label>  
   <div class="col-md-6">
-  <input id="textinput" name="textinput" placeholder="Enter Employer name" class="form-control input-md" required="" type="text">
+  <input id="textinput" name="userEmployer" placeholder="Enter Employer name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -272,7 +269,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Company</label>  
   <div class="col-md-6">
-  <input id="textinput" name="textinput" placeholder="Enter Company Name" class="form-control input-md" required="" type="text">
+  <input id="textinput" name="userCompany" placeholder="Enter Company Name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -280,11 +277,11 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="selectbasic">Experience</label>
   <div class="col-md-6">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">One Year</option>
-      <option value="2">Two Year</option>
-      <option value="3">Three Year</option>
-      <option value="4">More than 3 Year</option>
+    <select id="selectbasic" name="userExperience" class="form-control">
+      <option value="One Year">One Year</option>
+      <option value="Two Year">Two Year</option>
+      <option value="Three Year">Three Year</option>
+      <option value="More than 3 Year">More than 3 Year</option>
     </select>
   </div>
 </div>
@@ -293,7 +290,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Designation</label>  
   <div class="col-md-6">
-  <input id="textinput" name="textinput" placeholder="Enter Your Designation" class="form-control input-md" required="" type="text">  
+  <input id="textinput" name="userDesignation" placeholder="Enter Your Designation" class="form-control input-md" required="" type="text">  
   </div>
 </div>
 
@@ -301,7 +298,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="textarea">Job Description</label>
   <div class="col-md-6">                     
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+    <textarea class="form-control" id="textarea" name="userJobDescription"></textarea>
   </div>
 </div>
 
@@ -309,7 +306,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="singlebutton"></label>
   <div style="text-align: center;"class="col-md-5">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Save</button>
+    <button id="singlebutton" name="userExperienceSaveButton" class="btn btn-primary" type="submit">Save</button>
     <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="reset">Reset</button>
   </div>
 </div>
@@ -317,15 +314,14 @@ $(".btn-pref .btn").click(function () {
 
         </div>
       	<div class="tab-pane fade in" id="tab4">
-          <form class="form-horizontal">
+<form class="form-horizontal" method="post" action="userEditProfileVerify.php">
 <!-- Form Name -->
 <legend style="text-align: center;">Project Details</legend>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Client</label>  
   <div class="col-md-6">
-  <input id="textinput" name="textinput" placeholder="Enter Client name" class="form-control input-md" required="" type="text">
+  <input id="textinput" name="userClient" placeholder="Enter Client name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -333,7 +329,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Project Title</label>  
   <div class="col-md-6">
-  <input id="textinput" name="textinput" placeholder="Enter Project Title" class="form-control input-md" required="" type="text">  
+  <input id="textinput" name="userProjectTitle" placeholder="Enter Project Title" class="form-control input-md" required="" type="text">  
   </div>
 </div>
 
@@ -341,18 +337,18 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="selectbasic">Duration</label>
   <div class="col-md-2">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">Less than 6 months</option>
-      <option value="2">6 months</option>
-      <option value="3">1 year</option>
-      <option value="4">2 year</option>
-      <option value="5">3 year</option>
-      <option value="">more than 3 year</option>
+    <select id="selectbasic" name="userDuration" class="form-control">
+      <option value="Less than 6 months">Less than 6 months</option>
+      <option value="6 months">6 months</option>
+      <option value="1 Year">1 year</option>
+      <option value="2 Year">2 year</option>
+      <option value="3 Year">3 year</option>
+      <option value="more than 3 year">more than 3 year</option>
     </select>
   </div>
   		<label class="col-md-1 control-label" for="textinput">Location</label>  
   <div class="col-md-3">
-  <input id="textinput" name="textinput" placeholder="Enter Project Location" class="form-control input-md" required="" type="text">
+  <input id="textinput" name="userLocation" placeholder="Enter Project Location" class="form-control input-md" required="" type="text">
   </div>  		
 </div>
 
@@ -360,7 +356,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="text area">Project Details</label>
   <div class="col-md-6">                     
-    <textarea class="form-control" id="text area" name="text area"></textarea>
+    <textarea class="form-control" id="text area" name="userProjectDetails"></textarea>
   </div>
 </div>
 
@@ -368,12 +364,12 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Role</label>  
   <div class="col-md-2">
-  <input id="textinput" name="textinput" placeholder="Role played in Project" class="form-control input-md" type="text">
+  <input id="textinput" name="userRole" placeholder="Role played in Project" class="form-control input-md" type="text">
   </div>
   
   <label class="col-md-1 control-label" for="textinput">Skill Used</label>  
   <div class="col-md-3">
-  <input id="textinput" name="textinput" placeholder="Used Skills in Project" class="form-control input-md" required="" type="text">
+  <input id="textinput" name="userSkillUsed" placeholder="Used Skills in Project" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -384,7 +380,7 @@ $(".btn-pref .btn").click(function () {
 <div class="form-group">
   <label class="col-md-3 control-label" for="singlebutton"></label>
   <div style="text-align: center;" class="col-md-5">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Save</button>
+    <button id="singlebutton" name="userProjectSaveButton" class="btn btn-primary">Save</button>
   	<button id="btnclear1" name="btnNext1" type="reset"	 herf="#tab3" class="btn btn-primary">Reset</button>
   </div>
 </div>

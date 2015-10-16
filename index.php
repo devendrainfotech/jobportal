@@ -1,14 +1,18 @@
 <?php
 include_once 'userLoginVerify.php';// includes the login script
-if(isset($_COOKIE['auth_username']) && isset($_COOKIE['auth_password'])){
+include_once 'recruiterLoginVerify.php';
+/*if(isset($_COOKIE['auth_username']) && isset($_COOKIE['auth_password'])){
 	header("location: user_profile.php");
 //	echo "from the cookie index page";
-}
+}*/
 if(isset($_SESSION['login_user'])){
 	header("location: user_profile.php"); // make the homepage of the user and redirect this page to the user side...
 //	echo "from the index with session";
 	//make the user homepage; and redirect the user to his own homepage...
 	//echo"workin!!!";
+}
+else if(isset($_SESSION['login_recruiter'])){
+	header("location: recruiter_profile.php");
 }
 /*else{
 	echo "not sended to the profile page";
@@ -31,43 +35,36 @@ if(isset($_SESSION['login_user'])){
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-        <li class="active" data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li class="" data-target="#myCarousel" data-slide-to="1"></li>
         <li class="" data-target="#myCarousel" data-slide-to="2"></li>
         <li class="" data-target="#myCarousel" data-slide-to="3"></li>
-        <li class="" data-target="#myCarousel" data-slide-to="4"></li>
-        <li class="" data-target="#myCarousel" data-slide-to="5"></li>
+        <!--<li class="" data-target="#myCarousel" data-slide-to="4"></li>-->
+        
      </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="item">
+        <div class="item active">
           <img class="first-slide" src="Design/Images/carousel/image1-carousel.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <h1 class="header-style">We are first cloud based job portal covering all of your devices</h1>
+              <!--<p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
+            --></div>
           </div>
         </div>
         
         <div class="item">
           <img class="first-slide" src="Design/Images/carousel/carousel-image2.png" alt="First slide">
-          <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="item">
-          <img class="first-slide" src="Design/Images/carousel/carousel-image3.png" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            	<div class="container">
+            		<div class="col-md-4"></div>
+            		<div class="col-md-4">
+		              <h1 class="header-style">Are You a Developer?</h1>
+		              <p>Are you a developer waiting for a job? Don't worry we coverd you we have lots of jobs in programming languages, we are covering programmin lanuguages like:<code>JAVA,J2EE,C#,C++,PHP</code></p>
+		              <p><a class="btn btn-lg btn-primary" href="userregister.php" role="button">Sign up today</a></p>
+            		</div>
+            		<div class="col-md-4"></div>
             </div>
           </div>
         </div>
@@ -75,26 +72,29 @@ if(isset($_SESSION['login_user'])){
         <div class="item">
           <img class="first-slide" src="Design/Images/carousel/carousel-image4.png" alt="First slide">
           <div class="container">
-            <div class="carousel-caption">
+         <!--   <div class="carousel-caption">
               <h1>Example headline.</h1>
               <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
+         </div> -->
           </div>
         </div>
         
         
-        <div class="item active">
-          <img class="second-slide" src="Design/Images/carousel/carousel-image5.png" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
         <div class="item">
+          <img class="second-slide" src="Design/Images/carousel/carousel-image5.png" alt="Second slide">
+            <div class="carousel-caption">
+            	<div class="container">
+            	<div class="col-md-5">
+              <h1 class="header-style">Unemployed yet... Why?</h1>
+              <p>We have Lakhs of Vacancy in all job types. waiting just for you, so why wait register below and Recruit Your Self.</p>
+              <p>If you Register now you will Receive Special Benefits like: Resume Booster,Dyanmic Profile etc...</p>
+              <p><a class="btn btn-lg btn-primary" href="userregister.php" role="button">Register</a></p>
+            	</div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="item">
           <img class="third-slide img-responsive" src="Design/Images/carousel/carousel-image7.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
@@ -103,7 +103,7 @@ if(isset($_SESSION['login_user'])){
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
       
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

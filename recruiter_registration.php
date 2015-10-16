@@ -1,57 +1,45 @@
 <?php
+	include_once 'userLoginVerify.php';// includes the login script
+	include_once 'recruiterLoginVerify.php';
+	
+	if(isset($_SESSION['login_recruiter'])){
+		header("location: recruiter_profile.php");
+	}
+	if(isset($_SESSION['login_user'])){
+		header("location: user_profile.php");
+	}
+?>
+
+<?php
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
 <script type="text/javascript">
 	function userValidation(){
-		var x = document.userForm.userPassword.value;
-		var y = document.userForm.userConfirmPassword.value;
-		var z = document.userForm.userMobileNumber.value;
-			if(x.length < 8 || y.length < 8){
-				document.getElementById("error_message").innerHTML = "*Password must be 8 character Long";
-				document.userForm.userPassword.focus();
-				return false;
-			}
-			else if(x !== y){
-				document.getElementById("error_message").innerHTML = "*Both the Passwords must match";
-				document.userForm.userPassword.focus();
-				return false;
-			}
-			else if(isNaN(z) === true){
-				document.getElementById("error_message").innerHTML = "*Mobile Number must be in numbers";
-				document.userForm.userMobileNumber.focus();
-				return false;
-			}
-			else if(z.length !== 10){
-				document.getElementById("error_message").innerHTML = "*Mobile number must be 10 Digit Long";
-				document.userForm.userMobileNumber.focus();
-				return false;
-			}
-			else{
-				return true;
-			}
+		var x;
+		var y;
+		var z;
 	}
 </script>
 <div class="container">
 <div class="row">
-	<div class="col-md-6">
-<form name="userForm" class="form-horizontal" method="post" action="userRegisterVerify.php" id="" onsubmit="return(userValidation());">
-<br />
+<div class="col-md-6">
+<form name="userForm" class="form-horizontal" method="post" action="recruiterRegisterVerify.php" id="formvalidate" onsubmit="return(userValidation());">
 <fieldset>
 <!-- Form Name -->
-<legend style="text-align: center;"><h2>User Registration</h2></legend>
+<legend style="text-align: center;"><h2>Recruiter Registration</h2></legend>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Email id</label>  
   <div class="col-md-8">
-  <input id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
+  <input id="emailid" name="recruiteremailid" placeholder="Enter Your Email Id" class="form-control input-md" required="" type="text">  
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Enter Password</label>
   <div class="col-md-8">
-    <input id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
+    <input id="paswdid" name="recruiterpswd" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
   </div>
 </div>
 
@@ -59,7 +47,23 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Enter Confirm Password</label>
   <div class="col-md-8">
-    <input id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+    <input id="conpswdid" name="recruitercnfpswd" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Company Name</label>  
+  <div class="col-md-8">
+  <input id="cmpnmeid" name="recruitercmpname" placeholder="Enter Your Company Name" class="form-control input-md" required="" type="text">  
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Company Address</label>
+  <div class="col-md-8">                     
+    <textarea class="form-control" id="cmpaddid" name="recruitercmpadd">default text</textarea>
   </div>
 </div>
 
@@ -67,8 +71,8 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">State</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="userState" class="form-control">
-		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <select id="selectbasic" name="recruitercmpstate" class="form-control">
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
 		<option value="Assam">Assam</option>
@@ -103,7 +107,7 @@ include_once './Development/commonfiles/searchbar.php';
 		<option value="Uttaranchal">Uttaranchal</option>
 		<option value="Uttar Pradesh">Uttar Pradesh</option>
 		<option value="West Bengal">West Bengal</option>      
-    </select>
+</select>
   </div>
 </div>
 
@@ -111,8 +115,8 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">City</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="userCity" class="form-control">
-      	<option value="Mumbai">Mumbai</option>
+    <select id="selectbasic" name="recruitercmpcity" class="form-control">
+<option value="Mumbai">Mumbai</option>
 		<option value="Bangalore">Bangalore</option>
 		<option value="Hyderabad">Hyderabad</option>
 		<option value="Ahmedabad">Ahmedabad</option>
@@ -168,44 +172,49 @@ include_once './Development/commonfiles/searchbar.php';
   <div class="col-md-8">
     <div class="input-group">
       <span class="input-group-addon">+91</span>
-      <input id="prependedtext" name="userMobileNumber" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
+      <input id="prependedtext" name="recruitermblnum" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
     </div>
   </div>
 </div>
 
+<!-- Multiple Checkboxes 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <label class="col-md-4 control-label" for="checkboxes">Conditions</label>
   <div class="col-md-4">
-    <p id="error_message" style="color:red;"></p>
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input name="reccnd" id="checkboxes-0" value="" type="checkbox">
+      I agree to term and conditions.
+    </label>
+	</div>
   </div>
 </div>
-		<p id="error_message" style="color:red;"></p>
-	
+-->
+<!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button type="submit"id="singlebutton" name="userSubmitForm" class="btn btn-default">Submit</button>
-  	<button type="reset"id="singlebutton" name="userResetForm" class="btn btn-default"> Reset </button>
+    <button type="submit"id="singlebutton" name="recruiterRegisterButton" class="btn btn-default">Submit</button>
   </div>
 </div>
+
 </fieldset>
 </form>
+
+
 </div>
-<div class="col-md-1">
-	
-</div>
+<div class="col-md-1"></div>
 <div class="col-md-5">
-	<form class="setting-the-dropdown-menu-margin" method="post" action="userLoginVerify.php">
+	<form method="post" action="recruiterLoginVerify.php">
 		<fieldset>
-<!-- Form Name -->
-<legend style="text-align: center;"><h2>Already Registered?</h2></legend>
+			<legend style="text-align: center;"><h2>Recruiter LogIn</h2></legend>
     				<div class="form-group">
 				    <!--<label for="exampleInputEmail1">Email Address:</label>-->
-				    <input type="email" class="form-control" id="exampleInputEmail1" name="userEmailid" placeholder="Enter the Email id" required="">
+				    <input type="email" class="form-control" id="exampleInputEmail1" name="recruiterEmailid" placeholder="Enter the Email id" required="">
 				  </div>
 				  <div class="form-group">
 				    <!--<label for="exampleInputPassword1">Password:</label>-->
-				    <input type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
+				    <input type="password" class="form-control" id="exampleInputPassword1" name="recruiterPassword" placeholder="Enter Password" required="">
 				  </div>
 				  <div>
 				    <label>
@@ -217,9 +226,11 @@ include_once './Development/commonfiles/searchbar.php';
 				      <a>Forgot your password ?</a></center>
 				    </label>
 				  </div>
-				  <center><input type="submit" name="userLoginSubmit" class="btn btn-success" value="Sign In"/></center>
+				 <!-- <li role="separator" class="divider"></li>-->
+				  <center><input type="submit" name="recruiterLoginSubmit" class="btn btn-success" value="Sign In"/></center>
 				  <!--<span><?php echo $error; ?></span>-->
 				</div>
+				</fieldset>
     			</form>
 </div>
 </div>

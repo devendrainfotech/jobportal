@@ -31,11 +31,40 @@ $(".btn-pref .btn").click(function () {
         	<!--<span><a href="logout.php">LOG out</a></span>-->
         </div>
     </div>
+ </div>	
  </div>
- <div class="row">
- 	<div class="col-lg-12">
- 		<h3 class="profile-heading">Personal Information</h3>
- 		
+   <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
+            	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <div class="hidden-xs">Personal</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
+            	<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+                <div class="hidden-xs">Education</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
+            	<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+                <div class="hidden-xs">Experience</div>
+            </button>
+        </div>
+		<div class="btn-group" role="group">
+            <button type="button" id="following" class="btn btn-default" href="#tab4" data-toggle="tab">
+            	<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                <div class="hidden-xs">Project</div>
+            </button>
+        </div>
+	</div>
+</div>
+
+  <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          	
  		<table class="table  table-hover" style="text-align: center;">
 			<thead>
 			</thead>
@@ -75,29 +104,28 @@ $(".btn-pref .btn").click(function () {
 			<tr>
 				<td>Home Town</td><td>devendra yadav</td>
 			</tr>
-		</table>	
- 	</div>
- 	<div class="col-lg-12">
- 		<h3 class="profile-heading">Education Information</h3>
+		</table>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          
  		<table class="table table-hover">
 		<thead>
 			<tr>
-			<th>Sr no</th>
 			<th>Degree</th>
 			<th>University</th>
 			<th>Specialization</th>
 			<th>Year of Passing</th>
 			</tr>
 		</thead>
-		<tr><td>1</td><td>SSC</td><td></td><td></td><td></td></tr>
-		<tr><td>2</td><td>HSC</td><td></td><td></td><td></td></tr>
-		<tr><td>3</td><td>Basic Graduation</td><td></td><td></td><td></td></tr>
-		<tr><td>4</td><td>Post Graduation</td><td></td><td></td><td></td></tr>
-		<tr><td>5</td><td>Docotrate/Phd</td><td></td><td></td><td></td></tr>
-		</table>	
- 	</div>
- 	<div class="col-lg-12">
- 		<h3 class="profile-heading">Experience Information</h3>
+		<tr><td>SSC</td><td></td><td></td><td></td></tr>
+		<tr><td>HSC</td><td></td><td></td><td></td></tr>
+		<tr><td>Basic Graduation</td><td></td><td></td><td></td></tr>
+		<tr><td>Post Graduation</td><td></td><td></td><td></td></tr>
+		<tr><td>Docotrate/Phd</td><td></td><td></td><td></td></tr>
+		</table>
+        </div>
+        <div class="tab-pane fade in" id="tab3">
+          
  		<table class="table  table-hover" style="text-align: center;">
  			<tr>
 				<td>Employer:</td><td>devendra yadav</td>
@@ -115,10 +143,10 @@ $(".btn-pref .btn").click(function () {
 				<td>Job Description:</td><td>devendra yadav</td>
 			</tr>
 			
-		</table>	
- 	</div>
- 	<div class="col-lg-12">
- 		<h3 class="profile-heading">Project Information</h3>	
+		</table>
+        </div>
+      	<div class="tab-pane fade in" id="tab4">
+          	
  		<table class="table  table-hover" style="text-align: center;">
  			<tr>
 				<td>Client:</td><td>devendra yadav</td>
@@ -142,50 +170,6 @@ $(".btn-pref .btn").click(function () {
 				<td>Skill used:</td><td>devendra yadav</td>
 			</tr>
 		</table>
- 	</div>
-</div>
-</div>
-   <!-- <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
-            	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <div class="hidden-xs">Personal</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
-            	<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-                <div class="hidden-xs">Education</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
-            	<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-                <div class="hidden-xs">Experience</div>
-            </button>
-        </div>
-		<div class="btn-group" role="group">
-            <button type="button" id="following" class="btn btn-default" href="#tab4" data-toggle="tab">
-            	<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-                <div class="hidden-xs">Project</div>
-            </button>
-        </div>
-	</div>
-</div>-->
-
- <!--  <div class="well">
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-          <h3>This is tab 1</h3>
-        </div>
-        <div class="tab-pane fade in" id="tab2">
-          <h3>This is tab 2</h3>
-        </div>
-        <div class="tab-pane fade in" id="tab3">
-          <h3>This is tab 3</h3>
-        </div>
-      	<div class="tab-pane fade in" id="tab4">
-          <h3>This is tab 4</h3>
         </div>
       </div>
     </div>
@@ -196,4 +180,5 @@ $(".btn-pref .btn").click(function () {
     ?>-->
     <?php
     include_once './Development/commonfiles/footer.php';
+	include_once 'user_profile_data_fetch.php';
     ?>

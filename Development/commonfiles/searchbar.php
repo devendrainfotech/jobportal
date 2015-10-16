@@ -1,13 +1,21 @@
-   
      <div class="search_bar_background">
      <div class="container">
      <div class="row search-controls">
-
+	
       	  <form class="" action="searchresult.php" method="get">
 			  <div class="col-md-4">
 			  <div class="form-group"> 
-			    <input type="text" name="srchkeyword" class="form-control" spellcheck="false" id="searchid" placeholder="Enter The Keyword / Job / Company Name">
+			    <input type="text" name="srchkeyword" class="form-control auto" spellcheck="false" id="keyword" placeholder="Enter The Keyword / Job / Company Name">
 			  </div>
+			  <script type="text/javascript">
+			  	$(function() {
+				    //autocomplete
+				    $(".auto").autocomplete({
+				        source: "search.php",
+				        minLength: 1
+				    });                
+				});
+			  </script>
 			  </div>
 			  <div class="col-md-2">
 			  <div class="form-group">

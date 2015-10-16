@@ -20,7 +20,7 @@
 		//the below code for the session management...
 		$result = mysqli_query($conn, $query);	
 			if (mysqli_num_rows($result) == 1) {	
-					$_SESSION["login_user"] = $username;
+					$_SESSION["login_user"] = $username;// seeting the session
 					//setting the cookies below.....
 					if(isset($_POST["rememberme"])){
 						if(!isset($_COOKIE['auth_username']) || $_COOKIE['auth_password']){
