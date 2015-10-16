@@ -7,9 +7,9 @@
 				<p class="footer-links">
 					<a href="index.php">Home</a>
 					·
-					<a href="#">Blog</a>
+					<a href="recruiter_registration.php">Recruiter</a>
 					·
-					<a href="#">Pricing</a>
+					<a href="#">Blog</a>
 					·
 					<a href="aboutus.php">About</a>
 					·

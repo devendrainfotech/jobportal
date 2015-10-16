@@ -1,7 +1,7 @@
 <?php
-	include_once 'userLoginVerify.php';// includes the login script
-	include_once 'recruiterLoginVerify.php';
-	
+	session_start();
+	//include_once 'userLoginVerify.php';// includes the login script
+	//include_once 'recruiterLoginVerify.php';
 	if(isset($_SESSION['login_recruiter'])){
 		header("location: recruiter_profile.php");
 	}

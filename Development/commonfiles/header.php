@@ -67,7 +67,10 @@
 			  	<?php
 			  	if(!empty($_SESSION['login_user'])){
 			  		include_once 'header_right_with_login.php';
-			  	}else{
+			  	}else if(!empty($_SESSION['login_recruiter'])){
+					include_once 'recruiter_header_right.php';		
+				}
+				else{
 					include_once 'header_right_without_login.php';
 				}
 			  	?>

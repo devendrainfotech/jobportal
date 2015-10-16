@@ -1,6 +1,7 @@
 <?php
-include_once 'userLoginVerify.php';// includes the login script
-include_once 'recruiterLoginVerify.php';
+session_start();
+//include_once 'userLoginVerify.php';// includes the login script
+//include_once 'recruiterLoginVerify.php';//includes th session started which i have started manually....
 /*if(isset($_COOKIE['auth_username']) && isset($_COOKIE['auth_password'])){
 	header("location: user_profile.php");
 //	echo "from the cookie index page";

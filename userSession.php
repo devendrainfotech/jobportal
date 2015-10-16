@@ -16,6 +16,7 @@ if(isset($_SESSION['login_recruiter'])){
 	$session_row = mysqli_fetch_assoc($session_result);
 	$login_recruiter_session = $session_row['username'];
 }
+
 /*
 if(mysqli_fetch_assoc($session_result) > 0){
 	$login_session = $session_result['username'];
@@ -26,4 +27,11 @@ if(!isset($login_session)){// checking the login session variable have a value o
 	// destroy the session
 	//echo "session not found from page usersession.php";
 }
+/*if(!isset($login_recruiter_session)){// checking the login session variable have a value or not if its NULL so the connection will be cut of from the database... 
+	mysqli_close($conn);
+	//header("location: index.php");
+	// destroy the session
+	//echo "session not found from page usersession.php";
+}*/
+
 ?>
