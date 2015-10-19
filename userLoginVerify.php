@@ -15,12 +15,16 @@
 		$userpassword = stripslashes($userpassword);
 		$username = mysql_real_escape_string($username);
 		$userpassword = mysql_real_escape_string($userpassword);
+        
 		//---------------------------------------------------
-		$query = "SELECT *FROM `tblloginmst` WHERE `username`='$username' AND `user_password` = '$userpassword'";
+		$query = "SELECT *FROM `tbljobseekermst` WHERE `username`='$username' AND `user_password` = '$userpassword'";
 		//the below code for the session management...
 		$result = mysqli_query($conn, $query);	
+                 
 			if (mysqli_num_rows($result) == 1) {	
-					$_SESSION["login_user"] = $username;// seeting the session
+                    $row = mysqli_fetch_assoc($session_result);
+					$_SESSION["login_user"] = $username; // seeting the session
+
 					//setting the cookies below.....
 					if(isset($_POST["rememberme"])){
 						if(!isset($_COOKIE['auth_username']) || $_COOKIE['auth_password']){

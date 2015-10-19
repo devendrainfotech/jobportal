@@ -49,16 +49,17 @@
 
 				<div class="footer-icons">
 
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
+					<a href="#"><img src="design/Images/icons/brandfootericon/google.png"></a>
+					<a href="#"><img src="design/Images/icons/brandfootericon/fb.png"></a>
+					<a href="#"><img src="design/Images/icons/brandfootericon/tweet.jpg"></a>
+					<a href="#"><img src="design/Images/icons/brandfootericon/linked.png"></a>
 
 				</div>
 
 			</div>
 
 		</footer>
+<script type="text/javascript" src="Design/manual/javascript/file_last_validation.js"></script>
 
  </body>
 </html>

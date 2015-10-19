@@ -5,18 +5,32 @@
 		<meta name="generator" content="Bootply">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="icon" href="Design/Images/icons/tabicon.png" />
-		
+		<!-- All the css files are including here.... -->
 		<link type="text/css" href="Design/manual/css/jquery-ui.min.css" rel="stylesheet"/>
 		<!--<link type="text/css" href="Design/bootstrap/css/bootstrap-theme.css" rel="stylesheet">-->
 		<link type="text/css" href="Design/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/footer-distri.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
-				
+		<!-- -->
+		<link type="text/css" href="]extra/formvalidation-master/dist/css/formValidation.min.css" rel="stylesheet"/>
+		
+		<!-- -->
+		<!-- All the css files are including ABOVE.... -->
+		<!-- All the JAVASCRIPT files are including BELOW -->		
 		<script type="text/javascript" src="Design/Jquery/jquery-min.js"></script>
 		<script type="text/javascript" src="Design/Jquery/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="Design/bootstrap/js/bootstrap.js"></script>
-
-	<script>
+		<!-- All the JAVASCRIPT files are including ABOVE-->
+		<!-- -->
+		<script type="text/javascript" src="Design/bootstrap/js/npm.js"></script>
+		
+		
+		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/formValidation.min.js"></script>
+		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/language/en_US.js"></script>
+		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/framework/bootstrap.min.js"></script>
+		
+		<!-- -->
+	<!--<script>
 	// i gonna add later this code in separate file as soon as works :)
 	// script for the header bar for the highlighted links....
 	// i havve aready debug the follwing script i think there are some issue with the click event we have to try some other event....
@@ -28,7 +42,7 @@
 		});
 	});
 	// script for the header bar for the highlighted links....
-</script>
+</script>-->
 	
 	</head>
 	<body>

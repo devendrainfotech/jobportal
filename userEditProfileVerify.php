@@ -1,7 +1,9 @@
 <?php
 	include './Development/commonfiles/connection.php';
 	include_once './userSession.php';
+    include_once 'Development/commonfiles/general_function.php';
 	if(isset($_POST['userBasicSaveButton'])){
+        $jobseeker_id=$_SESSION['Userid'];
 		$userfirstname = $_POST['userFirstName'];
 		$userlastname = $_POST['userLastName'];
 		$userresumeheadline = $_POST['userResumeHeadline'];
@@ -9,20 +11,46 @@
 		$userfunctionalarea = $_POST['userFunctionalArea'];
 		$userrole = $_POST['userRole'];
 		$userdateofbirth = $_POST['userDateofBirth'];
-		//$useremailid = $_POST['userEmailId'];
+		$useremailid = $_POST['userEmailId'];
 		$usermobilenumber = $_POST['userMobileNumber'];
-		//$userfirstname = $_POST['userGender'];  	
+		$usergender = $_POST['userGender'];  	
 		$useraddress = $_POST['userAddress'];
 		$userpincode = $_POST['userPincode'];
 		$usercity = $_POST['userCity'];
-		
+		$contactid=jobseekerinfo($conn,'contact_id');
+        //$userdateofbirth1=date_format(date_create(jobseekerinfo($conn,$userdateofbirth)),'Y-m-d');
+        $userdateofbirth1=date('Y-d-m',strtotime($userdateofbirth));
 		// make a error handling includeing the empty function....:)
 		// role remains
 		
 			//$query = "INSERT INTO `tbljobseekermst`(`firstname`,`lastname`,`resume_headline`,`key_skill`,`functional_aera`,`role`,`dateofbirth`,`emailid`,`pincode`,`mobilenumber`,`address`,`city`) VALUES ('$userfirstname','$userlastname','$userresumeheadline','$userjobskill','$userfunctionalarea','$userrole','$userdateofbirth','$useremailid','$usermobilenumber','$useraddress','$userpincode','$usercity')";
-			$query = "UPDATE `tbljobseekermst` SET `firstname` = '$userfirstname',`lastname` = '$userlastname',`resume_headline` = '$userresumeheadline',`key_skill` = '$userjobskill',`functional_aera` = '$userfunctionalarea',`role` = '$userrole',`dateofbirth` = '$userdateofbirth',`mobilenumber` = '$usermobilenumber',`address` = '$useraddress',`pincode` = '$userpincode',`city` = '$usercity' WHERE `emailid` = '$login_session'";
-			if(mysqli_query($conn, $query)){
-				echo "updated";
+        
+			$query ="UPDATE `tbljobseekermst` 
+                    SET `firstname` = '$userfirstname',
+                        `lastname` = '$userlastname',
+                        `resume_headline` = '$userresumeheadline',
+                        `key_skill` = '$userjobskill',
+                        `functional_area` = '$userfunctionalarea',
+                        `dateofbirth` = '$userdateofbirth1',
+                        `mobileno` = '$usermobilenumber',
+                        `emailid`='$useremailid',
+                        `role` = '$userrole',                        
+                        `cityid`='$usercity',
+                        `gender`='$usergender'
+                       
+                  WHERE `jobseeker_id` = '$jobseeker_id'";
+        
+            $query1 ="UPDATE `tblcontactmst`
+                     SET `address`='$useraddress',
+                         `city`='$usercity',
+                         `pincode`='$userpincode',
+                         `category`='',
+                         `nationality`='',
+                         `marital_status`=''
+                    WHERE `contact_id` ='$contactid'";
+                        
+			if(mysqli_query($conn,$query) && mysqli_query($conn,$query1) ){
+				header('location:user_profile.php');
 			}
 			else{
 				echo mysqli_error($conn);

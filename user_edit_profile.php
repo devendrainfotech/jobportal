@@ -1,6 +1,7 @@
 <?php
 	include_once 'userSession.php'; // interactive user such as name and all user session for the verifying that user exist or not....
 	include_once 'usercookie.php';
+    include_once './Development/commonfiles/general_function.php';
 ?>
 <?php
 	include_once './Development/commonfiles/header.php';
@@ -59,7 +60,9 @@ $(".btn-pref .btn").click(function () {
         </div>
 	</div>
 </div>
-<!--=================tab2 coding starts from here ...... ==============-->
+<!--=================tab1 coding starts from here ...... ==============-->
+
+
    <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
@@ -68,11 +71,11 @@ $(".btn-pref .btn").click(function () {
 				<label class="col-xs-12 control-label" ><br/></label>  
 				<label class="col-md-3 control-label" for="txtFirstName"  text="First Name">Name</label>  
 				<div class="col-md-3">
-					<input id="txtFirstName" type="text" name="userFirstName" pattern="^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ]){2,20}$" placeholder="First Name" class="form-control" required="" >  
+					<input id="txtFirstName" type="text" name="userFirstName" pattern="^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ]){2,20}$" placeholder="First Name" class="form-control" required="" value="<?php echo jobseekerinfo($conn,'firstname') ?>" >  
 				</div>
 			  <!--<label class="col-md-2" for="txtLastName">Last Name</label>  -->
 				<div class="col-md-3">
-					<input id="txtLastName" type="text" name="userLastName" pattern="^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ]){2,20}$" placeholder="Last Name" class="form-control" required="" >  
+					<input id="txtLastName" type="text" name="userLastName" pattern="^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ]){2,20}$" placeholder="Last Name" class="form-control" required="" value="<?php echo jobseekerinfo($conn,'lastname') ?>">  
 				</div>
 			</div>
 			
@@ -81,7 +84,9 @@ $(".btn-pref .btn").click(function () {
 			<div class="form-group">
 			  <label class="col-md-3 control-label" for="txtResumeHeadline">Resume Headline</label>  
 			  <div class="col-md-6">
-			  <textarea class="form-control" id="txtHeadline" name="userResumeHeadline" placeholder="Entire Description about job. ">Your Resume Headline is the first thing Recruiter will see.</textarea>
+			  <textarea class="form-control" id="txtHeadline" name="userResumeHeadline" placeholder="Entire Description about job. " >
+                  <?php echo trim(jobseekerinfo($conn,'resume_headline')) ?>
+                  </textarea>
 			  </div>
 			</div>
 			
@@ -90,49 +95,68 @@ $(".btn-pref .btn").click(function () {
 			<div class="form-group">
 			  <label class="col-md-3 control-label" for="txtSkill">Job Skill/Keyword</label>  
 			  <div class="col-md-6">
-			  <input id="txtskill" name="userJobSkill" placeholder="Skill required for job.Like:- Asp.net,C,C++, JAVA"  class="form-control input-md" required="" type="text">
+			  <input id="txtskill" name="userJobSkill" placeholder="Skill required for job.Like:- Asp.net,C,C++, JAVA"  class="form-control input-md" required="" type="text" value="<?php echo jobseekerinfo($conn,'key_skill') ?>">
 			  </div>
 			</div>
 
 						
 			<!-- Select Basic -->
 			<div class="form-group">
-			  <label class="col-sm-3 control-label" for="drpIndustry">Function Area / Industry</label>
+			  <label class="col-sm-3 control-label" for="drpfunction_area">Function Area / Industry</label>
 			  <div class="col-sm-6">
-				<select id="drpIndustry" name="userFunctionalArea" class="form-control">
-				  <option value="IT-Software Development & Services">IT-Software Development & Services </option>
-				  <option value="IT-Hardware & Networking">IT-Hardware & Networking</option>
-				  <option value="Banking Sector/Financial Services/Broking">Banking Sector/Financial Services/Broking</option>
-				  <option value="Hotel/Restaurants/Airlines/Travel">Hotel/Restaurants/Airlines/Travel</option>
-				  <option value="Medical/Health Care/Hospital">Medical/Health Care/Hospital</option>
-				  
-				</select>
+              <?php
+                    $query1= "SELECT * FROM `tbl_list_mst` WHERE `type`= 'Function_Area'";
+                    $result1 = mysqli_query($conn,$query1);
+                    echo "<select name='userFunctionalArea' class='form-control'  required=''>";
+                    $selectedid=jobseekerinfo($conn,'functional_area');
+                    while($re=$result1->fetch_assoc())
+                    {
+                        
+                        $dropid=$re['autoid'];
+                        $value=$re['Value'];
+                        if($selectedid==$dropid)
+                            echo '<option value="'.$dropid.'" selected="selected">'.$value.'</option>';
+                        else
+                           echo '<option value="'.$dropid.'" >'.$value.'</option>';
+                           
+                    }
+                    echo"</select>";
+                ?>
 				</div>	
 			</div>	
 			
 			<!-- Select Basic -->
 			<div class="form-group">
-			  <label class="col-sm-3 control-label" for="drpRole">Role / Designation</label>
+			  <label class="col-sm-3 control-label" for="drpRole">Designation / Role</label>
 			  <div class="col-sm-6">
-				<select id="drpRole" name="userRole" class="form-control">
-				  <option value="Software Developer">Software Developer</option>
-				  <option value="Database Administrator">Database Administrator</option>
-				  <option value="Software Analyst">Software Analyst</option>
-				  <option value="Department Head /Team Lead/Tech Lead">Department Head /Team Lead/Tech Lead</option>
-				  <option value="QA">QA</option>
-				</select>
+				<?php
+                    $query2= "SELECT * FROM `tbl_list_mst` WHERE `type`= 'Designation'";
+                    $result2 = mysqli_query($conn,$query2);
+                    echo "<select name='userRole' class='form-control'  required=''>";
+                    $selectedid2=jobseekerinfo($conn,'role');
+                    while($re2=$result2->fetch_assoc())
+                    {
+                        $dropid2=$re2['autoid'];
+                        $value2=$re2['Value'];
+                        if($selectedid2==$dropid2)
+                        echo'<option value="'.$dropid2.'" selected="selected">'.$value2.'</option>';
+                           else
+                         echo '<option value="'.$dropid2.'" >'.$value2.'</option>';
+                    }
+                    echo"</select>";
+                ?>
 				</div>	
 			</div>	
 			
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="txtDob"  text="First Name">Date of Birth</label>  
+				<label class="col-sm-3 control-label" for="txtDob"  text="Date of birth">Date of Birth</label>  
 				<div class="col-sm-2">
-					<input id="txtDob" type="date" name="userDateofBirth"  min="1960-01-01" max="2000-01-01" pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$" placeholder="Date of Birth" class="form-control" required="" hint="DD/MM/YYYY">  
+					<input id="txtDob" type="date" name="userDateofBirth"  min="1960-01-01" max="2000-01-01" pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$" placeholder="DD/MM/YYYY" class="form-control" required="" hint="DD/MM/YYYY" value="<?php echo date_format(date_create(jobseekerinfo($conn,'dateofbirth')),'d/m/Y') ?>" >  
 					
 				</div>
-				<label class="col-md-1 control-label" for="txtEmail" text="First Name">Email Id</label>  
+				<label class="col-md-1 control-label" for="txtEmail" text="Email">Email Id</label>  
 				<div class="col-md-3">
-					<input id="txtEmail" type="text" name="userEmailId" pattern="*\@*\.(a-z-A-Z)$" placeholder="Email Address	" class="form-control" required="" >  
+					<input id="txtEmail" type="text" name="userEmailId" pattern="*\@*\.(a-z-A-Z)$" placeholder="Email Address	" class="form-control" required="" value=" <?php echo jobseekerinfo($conn,'emailid') ?>" >  
 				</div>
 			</div>
 			
@@ -141,16 +165,17 @@ $(".btn-pref .btn").click(function () {
 				<div class="col-md-3">
 					<div class="input-group">
 					  <span class="input-group-addon">+91</span>
-					 <input id="prependedtext" name="userMobileNumber" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
+					 <input id="prependedtext" name="userMobileNumber" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text" value=" <?php echo jobseekerinfo($conn,'Mobileno') ?>">
 					</div>
 				</div>
 					<div class="col-md-4 ">
 				    <label class="label_radio col-md-3" for="radio-01">Gender</label>
                     <label class="label_radio col-md-3" for="radio-01">
-                      <input type="radio" name="userGenderMale" value="M" group="Gender" checked /> Male
+                        <?php $gender=jobseekerinfo($conn,'Gender') ?>
+                      <input type="radio" name="userGender" value="M" group="Gender" <?php echo ($gender=='M')?'checked':'' ?> /> Male
                     </label>
-                    <label class="label_radio col-md-3" for="radio-02">
-                       <input type="radio" name="userGenderFemale" value="F" group="Gender" /> Female
+                    <label class="label_radio col-md-4" for="radio-02">
+                       <input type="radio" name="userGender" value="F" group="Gender" <?php echo ($gender=='F')?'checked':'' ?> /> Female
                     </label></label>
                 </div>
 			</div>
@@ -158,26 +183,35 @@ $(".btn-pref .btn").click(function () {
 			<div class="form-group">
 			  <label class="col-md-3 control-label" for="txtAddress">Address</label>  
 				  <div class="col-md-3">
-				  <textarea class="form-control" id="txtHeadline" name="userAddress"  placeholder="">Present address</textarea>
+				  <textarea class="form-control" id="txtHeadline" name="userAddress"  placeholder=""> 
+                      <?php echo trim(getContactinfo($conn,jobseekerinfo($conn,'contact_id'),'address')) ?>
+                      </textarea>
 				  </div>
 				 <div>
-				 <label class="col-md-1 control-label" for="txtPinCode" text="First Name">Pin Code</label>  
+				 <label class="col-md-1 control-label" for="txtPinCode" text="Pin Code">Pin Code</label>  
 				 <div class="col-md-2">
-					<input id="txtPinCode" type="text" name="userPincode" placeholder="Pin Code	" class="form-control" required="" >  
+					<input id="txtPinCode" type="text" name="userPincode" placeholder="Pin Code	" class="form-control" required="" value="<?php echo getContactinfo($conn,jobseekerinfo($conn,'contact_id'),'pincode') ?>">  
 				</div>
 				 
-				 <br><br><label class="col-md-1 control-label" for="selectbasic">Home Town/City</label>
+				 <br><br><label class="col-md-1 control-label" for="selectbasic">City</label>
 					<div class="col-md-2">
-					<select id="selectbasic" name="userCity" class="form-control">
-					  <option value="">Mumbai</option>
-						<option value="Bangalore">Bangalore</option>
-						<option value="Hyderabad">Hyderabad</option>
-						<option value="Ahmedabad">Ahmedabad</option>
-						<option value="Chennai">Chennai</option>
-						<option value="Kolkata">Kolkata</option>
-						<option value="Surat">Surat</option>
-						<option value="Pune">Pune</option>
-					</select>
+                        <?php
+                    $query3= "SELECT * FROM `tblcitymst`";
+                    $result3 = mysqli_query($conn,$query3);
+                  $selectedid3=jobseekerinfo($conn,'cityid');
+                    echo "<select name='userCity' class='form-control'  required=''>";
+                    while($re3=$result3->fetch_assoc())
+                    {
+                        $dropid3=$re3['cityid'];
+                        $value3=$re3['name'];
+                        if($selectedid3==$dropid3)
+                        echo'<option value="'.$dropid3.'" selected="selected">'.$value3.'</option>';
+                           else
+                         echo '<option value="'.$dropid3.'" >'.$value3.'</option>';
+                    }
+                    echo"</select>";
+                ?>
+					
 					</div>
 					</div>
 			</div>

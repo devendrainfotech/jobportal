@@ -38,14 +38,14 @@
 				</div>
 				<div class="col-md-4">
 					<div class="aboutus-palletes">
-					<center><img src="Design/Images/dev.jpg" class="img-circle"/></center>
+					<center><img src="Design/Images/darsh.jpg" width="250px" height="250px"  class="img-circle"/></center>
 					<div>
-						<h2>Gajar Darshak</h2><hr />
+						<h2>Gajjar Darshak</h2><hr />
 						Skill:Web Developer, WebDesigner<br />
-						Contact No: 00000000<br />
-						Email id: gajardarshak@gmail.com<br />
-						Facebook id:<br />
-						Twitter id:<br />
+						Contact No: 8866444301<br />
+						Email id: gajjar.darshak@gmail.com<br />
+						Facebook id:gajjar.darshak<br />
+						Twitter id:darshak_007<br />
 					</div>
 					</div>
 				</div>

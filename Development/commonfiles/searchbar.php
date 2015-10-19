@@ -5,11 +5,10 @@
       	  <form class="" action="searchresult.php" method="get">
 			  <div class="col-md-4">
 			  <div class="form-group"> 
-			    <input type="text" name="srchkeyword" class="form-control auto" spellcheck="false" id="keyword" placeholder="Enter The Keyword / Job / Company Name">
+			    <input type="text" name="srchkeyword" class="form-control auto" spellcheck="false" id="keyword" placeholder="Enter The Keyword">
 			  </div>
 			  <script type="text/javascript">
 			  	$(function() {
-				    //autocomplete
 				    $(".auto").autocomplete({
 				        source: "search.php",
 				        minLength: 1
@@ -39,36 +38,41 @@
 			  <!-- jquery coding for the autofill location and etc..... -->
 			  <div class="col-md-2">
 			  <div class="form-group">
-			  <select class="form-control" name="srchsalary">
-			  	<option>Experience</option>	
-  				  <option>1 year</option>
-				  <option>2 year</option>
-				  <option>3 year</option>
-				  <option>4 year</option>
-				  <option>> 5 year</option>
+			  <select class="form-control" name="srchexperience">
+			  	<option value="null">Experience</option>	
+  				  <option value="1">1 year</option>
+				  <option value="2">2 year</option>
+				  <option value="3">3 year</option>
+				  <option value="4">4 year</option>
+				  <option value="5">5 year</option>
 				</select>
 				</div>
 			  </div>
 			  
 			  <div class="col-md-2">
 			  <div class="form-group">
-			  <select class="form-control" name = "srchexperience">
-			  	<option>Salary</option>	
-  				  <option> < 1 Lac</option>
-				  <option> 2 Lac </option>
-				  <option> 3 Lac</option>
-				  <option> 4 Lac</option>
-				  <option> 5 Lac</option>
-				  <option> 6 Lac</option>
-				  <option> 7 Lac</option>
-				  <option> 8 Lac</option>
-				  <option> 9 Lac</option>
-				  <option> > 10 lac</option>
+			  <select class="form-control" name = "srchsalary">
+			  	<option value="null">Salary</option>	
+  				  <option value="1"> < 1 Lac</option>
+				  <option value="2"> 2 Lac </option>
+				  <option value="3"> 3 Lac</option>
+				  <option value="4"> 4 Lac</option>
+				  <option value="5"> 5 Lac</option>
+				  <option value="6"> 6 Lac</option>
+				  <option value="7"> 7 Lac</option>
+				  <option value="8"> 8 Lac</option>
+				  <option value="9"> 9 Lac</option>
+				  <option value="10">10 lac</option>
+				  <option value="11">11 lac</option>
+				  <option value="12">12 lac</option>
+				  <option value="13">13 lac</option>
+				  <option value="14">14 lac</option>
+				  <option value="15">15 lac</option>
 				</select>
 				</div>
 				</div>
 				<div class="col-md-2">
-			  <button type="submit" class="btn btn-warning search-job-button">Search Jobs</button>
+			  <button type="submit" name="searchjobs" class="btn btn-warning search-job-button">Search Jobs</button>
 			</div>
 			</form>
 			</div>

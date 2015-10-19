@@ -9,22 +9,20 @@
 		header("location: user_profile.php");
 	}
 ?>
-
 <?php
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
 <script type="text/javascript">
-	function userValidation(){
-		var x;
-		var y;
-		var z;
-	}
+	$(document).ready(function(){
+		$('.navbar-right').hide();
+	});
 </script>
+
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-<form name="userForm" class="form-horizontal" method="post" action="recruiterRegisterVerify.php" id="formvalidate" onsubmit="return(userValidation());">
+<form id="defaultForm" name="userForm" class="form-horizontal fv-form fv-form-bootstrap" method="post" action="recruiterRegisterVerify.php">
 <fieldset>
 <!-- Form Name -->
 <legend style="text-align: center;"><h2>Recruiter Registration</h2></legend>
@@ -32,25 +30,23 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Email id</label>  
   <div class="col-md-8">
-  <input id="emailid" name="recruiteremailid" placeholder="Enter Your Email Id" class="form-control input-md" required="" type="text">  
+  <input data-fv-field="email" id="emailid" name="recruiteremailid" placeholder="Enter Your Email Id" class="form-control input-md" required="" type="email">  
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Enter Password</label>
+  <label class="col-md-4 control-label" for="passwordinput">Password</label>
   <div class="col-md-8">
-    <input id="paswdid" name="recruiterpswd" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
+    <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" data-fv-field="password" id="paswdid" name="recruiterpswd" placeholder="Enter Your Password" class="form-control input-md" required="" type="password" title="enter password 8char long">
   </div>
 </div>
-
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Enter Confirm Password</label>
+  <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
   <div class="col-md-8">
-    <input id="conpswdid" name="recruitercnfpswd" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="conpswdid" name="recruitercnfpswd" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Company Name</label>  
@@ -58,7 +54,6 @@ include_once './Development/commonfiles/searchbar.php';
   <input id="cmpnmeid" name="recruitercmpname" placeholder="Enter Your Company Name" class="form-control input-md" required="" type="text">  
   </div>
 </div>
-
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Company Address</label>
@@ -66,7 +61,6 @@ include_once './Development/commonfiles/searchbar.php';
     <textarea class="form-control" id="cmpaddid" name="recruitercmpadd">default text</textarea>
   </div>
 </div>
-
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">State</label>
@@ -110,7 +104,6 @@ include_once './Development/commonfiles/searchbar.php';
 </select>
   </div>
 </div>
-
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">City</label>
@@ -172,7 +165,7 @@ include_once './Development/commonfiles/searchbar.php';
   <div class="col-md-8">
     <div class="input-group">
       <span class="input-group-addon">+91</span>
-      <input id="prependedtext" name="recruitermblnum" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
+      <input pattern="[0-9]{10}" id="prependedtext" name="recruitermblnum" class="form-control" placeholder="Enter Your Mobile Number" required="" hint="enter at least 10 digit" type="text">
     </div>
   </div>
 </div>
@@ -200,21 +193,21 @@ include_once './Development/commonfiles/searchbar.php';
 
 </fieldset>
 </form>
-
-
 </div>
+
 <div class="col-md-1"></div>
+
 <div class="col-md-5">
-	<form method="post" action="recruiterLoginVerify.php">
+	<form id="defaultForm2" class="form-horizontal fv-form fv-form-bootstrap" method="post" action="recruiterLoginVerify.php" novalidate="novalidate">
 		<fieldset>
 			<legend style="text-align: center;"><h2>Recruiter LogIn</h2></legend>
     				<div class="form-group">
 				    <!--<label for="exampleInputEmail1">Email Address:</label>-->
-				    <input type="email" class="form-control" id="exampleInputEmail1" name="recruiterEmailid" placeholder="Enter the Email id" required="">
+				    <input data-fv-field="email" type="email" class="form-control" id="exampleInputEmail1" name="recruiterEmailid" placeholder="Enter the Email id" required="">
 				  </div>
 				  <div class="form-group">
 				    <!--<label for="exampleInputPassword1">Password:</label>-->
-				    <input type="password" class="form-control" id="exampleInputPassword1" name="recruiterPassword" placeholder="Enter Password" required="">
+				    <input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="recruiterPassword" placeholder="Enter Password" required="">
 				  </div>
 				  <div>
 				    <label>
@@ -231,10 +224,11 @@ include_once './Development/commonfiles/searchbar.php';
 				  <!--<span><?php echo $error; ?></span>-->
 				</div>
 				</fieldset>
-    			</form>
+    </form>
 </div>
 </div>
 </div>
 <?php
 include_once './Development/commonfiles/footer.php';
 ?>
+

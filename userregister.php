@@ -2,7 +2,7 @@
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	function userValidation(){
 		var x = document.userForm.userPassword.value;
 		var y = document.userForm.userConfirmPassword.value;
@@ -31,12 +31,11 @@ include_once './Development/commonfiles/searchbar.php';
 				return true;
 			}
 	}
-</script>
+</script>-->
 <div class="container">
 <div class="row">
-	<div class="col-md-6">
-<form name="userForm" class="form-horizontal" method="post" action="userRegisterVerify.php" id="" onsubmit="return(userValidation());">
-<br />
+<div class="col-md-6">
+<form id="defaultForm" class="form-horizontal fv-form fv-form-bootstrap" novalidate="novalidate" method="post" action="userRegisterVerify.php">
 <fieldset>
 <!-- Form Name -->
 <legend style="text-align: center;"><h2>User Registration</h2></legend>
@@ -44,22 +43,22 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Email id</label>  
   <div class="col-md-8">
-  <input id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
+  <input data-fv-field="email" id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Enter Password</label>
+  <label class="col-md-4 control-label" for="passwordinput">Password</label>
   <div class="col-md-8">
-    <input id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
   </div>
 </div>
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Enter Confirm Password</label>
+  <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
   <div class="col-md-8">
-    <input id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
   </div>
 </div>
 
@@ -168,19 +167,11 @@ include_once './Development/commonfiles/searchbar.php';
   <div class="col-md-8">
     <div class="input-group">
       <span class="input-group-addon">+91</span>
-      <input id="prependedtext" name="userMobileNumber" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
+      <input id="prependedtext" pattern="[0-9]{10}" name="userMobileNumber" class="form-control" placeholder="Enter Your Mobile Number" required="" type="text">
     </div>
   </div>
 </div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" for="prependedtext"></label>
-  <div class="col-md-4">
-    <p id="error_message" style="color:red;"></p>
-  </div>
-</div>
-		<p id="error_message" style="color:red;"></p>
-	
+	<!--<p id="error_message" style="color:red;"></p>-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
@@ -192,21 +183,21 @@ include_once './Development/commonfiles/searchbar.php';
 </form>
 </div>
 <div class="col-md-1">
-	
+<!---->	
 </div>
 <div class="col-md-5">
-	<form class="setting-the-dropdown-menu-margin" method="post" action="userLoginVerify.php">
-		<fieldset>
-<!-- Form Name -->
-<legend style="text-align: center;"><h2>Already Registered?</h2></legend>
-    				<div class="form-group">
-				    <!--<label for="exampleInputEmail1">Email Address:</label>-->
-				    <input type="email" class="form-control" id="exampleInputEmail1" name="userEmailid" placeholder="Enter the Email id" required="">
-				  </div>
-				  <div class="form-group">
-				    <!--<label for="exampleInputPassword1">Password:</label>-->
-				    <input type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
-				  </div>
+	<form id="defaultForm1" class="form-horizontal fv-form fv-form-bootstrap" method="post" action="userLoginVerify.php" novalidate="novalidate">
+	<fieldset>
+	<!-- Form Name -->
+	<legend style="text-align: center;"><h2>Already Registered?</h2></legend>
+    	<div class="form-group">
+			<!--<label for="exampleInputEmail1">Email Address:</label>-->
+			<input data-fv-field="email" type="email" class="form-control" id="exampleInputEmail1" name="userEmailid" placeholder="Enter the Email id" required="">
+			</div>
+			<div class="form-group">
+			<!--<label for="exampleInputPassword1">Password:</label>-->
+			<input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
+			</div>
 				  <div>
 				    <label>
 				      <input type="checkbox" name="rememberme" value="1"> Remember me
@@ -224,6 +215,10 @@ include_once './Development/commonfiles/searchbar.php';
 </div>
 </div>
 </div>
+<br />
+<br />
+<br />
+<br />
 <?php
 include_once './Development/commonfiles/footer.php';
 ?>

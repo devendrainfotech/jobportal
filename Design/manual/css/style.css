@@ -1,3 +1,26 @@
+.job-post-search{
+	background-color: #fff;
+	padding: 5px 30px 10px 30px;
+}
+.job-post-search h4{
+	color: #027c8D;
+}
+.job-post-search .row{
+	margin-bottom: 10px;
+}
+.job-search-buttons{
+	padding:10px 10px 10px 10px;
+	background-color: #e5e5e5;
+	height:auto;
+	margin-bottom: 10px;
+	border-bottom: 5px solid #2cabbd;
+	overflow: auto;
+}
+.job-search-buttons .btn{
+	
+}
+/* job post search pages ....*/
+
 /* for the temparory solution */
 div.carousel-caption:nth-child(1){
 	margin-bottom: 140px;

@@ -3,10 +3,15 @@ session_start();
 include_once './Development/commonfiles/connection.php';
 if(isset($_SESSION['login_user'])){
 $usercheck = $_SESSION['login_user']; // checking the session is still exist or not 
-$session_query = "SELECT `username` FROM `tblloginmst` WHERE `username` = '$usercheck'";
+$session_query = "SELECT * FROM `tbljobseekermst` WHERE `username` = '$usercheck'";
 $session_result = mysqli_query($conn, $session_query);
 $session_row = mysqli_fetch_assoc($session_result);// my email id in the session_row variable...
 $login_session = $session_row['username'];
+$login_id=$session_row['jobseeker_id'];
+
+$_SESSION['Userid']=$login_id;
+$_SESSION['Username']=$login_session;
+
 }
 
 if(isset($_SESSION['login_recruiter'])){
