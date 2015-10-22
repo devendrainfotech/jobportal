@@ -13,6 +13,7 @@
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
+<title> Recruiter Registration</title>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.navbar-right').hide();

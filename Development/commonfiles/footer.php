@@ -9,13 +9,9 @@
 					·
 					<a href="recruiter_registration.php">Recruiter</a>
 					·
-					<a href="#">Blog</a>
+					<a href="aboutus.php">About Us</a>
 					·
-					<a href="aboutus.php">About</a>
-					·
-					<a href="#">Faq</a>
-					·
-					<a href="#">Contact</a>
+					<a href="contactus.php">Contact Us</a>
 				</p>
 
 				<p class="footer-company-name">Job Portal Pvt Ltd &copy; 2015</p>
@@ -25,7 +21,7 @@
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Ahmedabad, Gujarat</p>
+					<p><span>21 Revolution Street,</span> Ahmedabad, Gujarat</p>
 				</div>
 
 				<div>
@@ -35,7 +31,7 @@
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@jobportal.com</a></p>
+					<p><a href="mailto:support@company.com">mysupport@jobportal.com</a></p>
 				</div>
 
 			</div>
@@ -44,8 +40,8 @@
 
 				<p class="footer-company-about">
 					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
+					Discover the driving force behind the operational efficiency of Job Portal and trace the company's origin, growth, vision and corporate milestones.
+					</p>
 
 				<div class="footer-icons">
 

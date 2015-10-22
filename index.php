@@ -118,33 +118,42 @@ else if(isset($_SESSION['login_recruiter'])){
     </div>
     <!-- .... carousel wii be end at here .... -->
     <!-- marketing strarts from here.... --->
+    <div class="marketing">
     <div class="container">
     <div class="row" style="">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        	<div class="inside-marketing">
+          <img class="img-circle img-thumbnail" src="Design/Images/indexdetail/job.jpg" alt="Generic placeholder image" height="140" width="140">
+          <h2>Local Jobs</h2>
+          <p>The right job, close to home or across the country. Simply Hired makes it easy for you to find the job that fits your life. Browse by town, zip code, or explore by state.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        	--></div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        	<div class="inside-marketing">
+          <img class="img-circle img-thumbnail" src="Design/Images/indexdetail/comany.jpg" height="140" width="140">
+          <h2>Company Directory</h2>
+          <p>With thousands of hiring companies in our database, Simply Hired is the best place on the web to find the right company that matches your skills, needs, and goals.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        --></div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+          <div class="inside-marketing">
+          <img class="img-circle img-thumbnail" src="Design/Images/indexdetail/employers.jpg" alt="Generic placeholder image" height="140" width="140">
+          <h2>For Employers</h2>
+          <p>Connects over 30 million unique job seekers with millions of jobs each month. Sponsoring jobs gives you a cost-effective solution for reaching qualified candidates.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        --></div><!-- /.col-lg-4 -->
+      	</div>
+      </div>
       </div>
       </div>
       <!--marketing ends here .... -->
       <!--Company profile starts from here ...  -->
       <div class="logo-showcase-out">
-      			<h2>We are Recruiting</h2>
       <div class="container logo-showcase">
+      	<h3>We are Recruiting</h3>
+      			<hr>
       	<div class="row company-logo-allignment">
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/IBM.jpg" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/Pearson.jpg" class="img-thumbnail"/></div>
@@ -169,17 +178,67 @@ else if(isset($_SESSION['login_recruiter'])){
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/WA.jpg" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/ford.jpg" class="img-thumbnail"/></div>
       	</div>
-      	<div class="row company-logo-allignment">
+      	<hr>
+      	<!--<div class="row company-logo-allignment">
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/nordion.png" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/infinity.jpg" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/hp.jpg" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/hitachi.png" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/heinemann.png" class="img-thumbnail"/></div>
       		<div class="col-sm-2"><img src="Design/Images/companylogoes/godrej.gif" class="img-thumbnail"/></div>
-      	</div>
+      	</div>-->
       </div>
       </div>
       <!-- Company profiles ends here .... -->
+<div class="testimonial-content">
+<div class="container content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="testimonials">
+            	<div class="active item">
+                  <blockquote><p>"I appreciate all the work you put into finding legitimate work from home positions, because I worked for months doing the same thing before I found Job Portal. After I joined Job Portal, I got a job and have been working with the company for almost a year now. I recently got a promotion too! FlexJobs is wonderful and thanks for everything! :)"</p></blockquote>
+                  <div class="carousel-info">
+                    <img alt="" src="Design/Images/indexdetail/test1.jpg" class="pull-left">
+                    <div class="pull-left">
+                      <span class="testimonials-name"><b>Andrea Maneval</b></span>
+                      <span class="testimonials-post">Commercial Director</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonials">
+                <div class="active item">
+                  <blockquote><p>"I love Job Portal. It only took me two weeks to find a job to provide supplemental income. I wanted the job to be interesting too! This job as a Local Editor for OurTown will be perfect. I found out about your site from an AOL story that said, 'according to Job Portal ....', so I looked for your site, and the rest is history. I would suggest it to anyone!"</p></blockquote>
+                  <div class="carousel-info">
+                    <img alt="" src="Design/Images/indexdetail/test2.jpg" class="pull-left">
+                    <div class="pull-left">
+                      <span class="testimonials-name"><b>Kim Lemrick</b></span>
+                      <span class="testimonials-post">Senior Designer</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+      
+        </div>
+        <div class="col-md-4">
+            <div class="testimonials">
+                <div class="active item">
+                  <blockquote><p>"I just wanted to say thanks for having such a great website. It is so worth the money. I found a part-time job after only two weeks. It is in freelance writing, which is a field I had never thought about before. I love it. I am able to work as little or as much as I want on my own schedule. I never would have found this opportunity on my own. Kudos!"</p></blockquote>
+                  <div class="carousel-info">
+                    <img alt="" src="Design/Images/indexdetail/test3.jpg" class="pull-left">
+                    <div class="pull-left">
+                      <span class="testimonials-name"><b>Bill Lehman</b></span>
+                      <span class="testimonials-post">Project Manager</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+</div>
 <?php
 	//include_once './Development/forms/register_user.php';
 	include_once './Development/commonfiles/footer.php';

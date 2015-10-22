@@ -16,14 +16,14 @@
 				    <!--<label for="exampleInputPassword1">Password:</label>-->
 				    <input type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
 				  </div>
-				  <div>
+				 <!-- <div>
 				    <label>
 				      <input type="checkbox" name="rememberme" value="1"> Remember me
 				    </label>
-				  </div>
+				 </div>-->
 				  <div>
 				    <label>
-				      <a>Forgot your password ?</a></center>
+				      <a href="#">Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				  <li role="separator" class="divider"></li>

@@ -1,10 +1,10 @@
 <?php
+include_once './usersession.php';
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
 <?php
 include_once './Development/commonfiles/connection.php'; 
-
 if(isset($_GET['searchjobs'])){
 $keyword = $_GET['srchkeyword'];
 $location = $_GET['srchlocation'];

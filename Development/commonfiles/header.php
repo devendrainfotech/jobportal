@@ -11,6 +11,7 @@
 		<link type="text/css" href="Design/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/footer-distri.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
+		<link type="text/css" href="Design/manual/css/testimonials.css" rel="stylesheet"/>
 		<!-- -->
 		<link type="text/css" href="]extra/formvalidation-master/dist/css/formValidation.min.css" rel="stylesheet"/>
 		
@@ -62,9 +63,11 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="index.php">Home</a></li>-->
-            <li class="default"><a href="aboutus.php">About</a></li>
+            
             <li class="default"><a href="recruiter_registration.php">Recruiter</a></li>
-            <li class="dropdown">
+            <li class="default"><a href="aboutus.php">About Us</a></li>
+            <li class="default"><a href="contactus.php">Contact Us</a></li>
+            <!--<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Diff. Forms<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#"><a href="user_profile.php">User_Profile page</a></a></li>
@@ -75,7 +78,7 @@
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li>-->
           </ul>
           
 			  	<?php

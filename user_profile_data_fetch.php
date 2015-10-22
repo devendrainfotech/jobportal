@@ -1,5 +1,5 @@
 <?php
-	include_once './userSession.php';
+/*	include_once './userSession.php';
 	include_once './Development/commonfiles/connection.php';
 	$query = "SELECT *from `jobseekerdetail` WHERE `emailid` = '$login_session'";	
 	
@@ -18,4 +18,6 @@
 		mysqli_error($conn);
 	}
 	mysqli_close($conn);
-?>
+
+ * /
+ */?>

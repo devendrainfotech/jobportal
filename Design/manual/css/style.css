@@ -1,3 +1,40 @@
+div.col-lg-4{
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top:30px;	
+}
+.marketing{
+	color:#fff;
+	background-color:#ccc;
+	width:100%;
+	height:auto;
+}
+.marketing .inside-marketing{
+	background-color:#4956a6;
+	padding-top:40px;
+	border-radius:15px;
+}
+.marketing .inside-marketing h2{
+	color:#FF5722;
+	margin-top:30px;
+	margin-bottom:10px;
+}
+.marketing .inside-marketing p{
+	background-color:#1b2a85;
+	padding:25px 25px 25px 25px;
+	border-radius:0px 0px 15px 15px;
+}
+.inside-marketing .col-lg-4{
+	margin:20px 0px 20px 0px;
+}
+.testimonial-content{
+	background-color:#00796B;
+	width:100%;
+	height:auto;
+	padding-bottom:40px;
+	padding-top:20px;
+}
+/*testimonials css file*/
 .job-post-search{
 	background-color: #fff;
 	padding: 5px 30px 10px 30px;
@@ -32,11 +69,11 @@ div.carousel-caption:nth-child(1){
 	border-radius: 10px 10px 0px 0px;
 	border-bottom: 5px solid #F78D12;
 }
-#myCarousel{
+/*#myCarousel{
 	-webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
-}
+}*/
 .carousel-caption{
 	left:0%;
 	right:0%;
@@ -53,22 +90,16 @@ div.carousel-caption:nth-child(1){
 	/*background-color:#0E9FB4 ;*/
 }
 .logo-showcase-out{
-	background-color:#0E9FB4;
+	background-color:#753200;
 	padding-top: 5px;
 	padding-bottom:15px;
-	margin-bottom: 50px;
 	color:#fff;
-	-webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+	/*-webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);*/
 }
 .logo-showcase-out h2{
 	border-bottom: 2px solid white;
-}
-div.col-lg-4{
-	text-align: center;
-	margin-bottom: 50px;
-	margin-top:50px;	
 }
 body{
 	color:#000;
@@ -136,3 +167,15 @@ div > h2{
 	background-color:#FFF;
 }
 */
+
+@media screen and (max-width: 770px){
+	.company-logo-allignment{
+		text-align: center;
+	}
+	.company-logo-allignment .col-sm-2{
+		margin-bottom:20px;
+	}
+	.testimonials{
+		margin-bottom:50px;
+	}
+}

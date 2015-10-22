@@ -5,6 +5,7 @@
 ?>
 <?php
 	include_once './Development/commonfiles/header.php';
+	include_once './Development/commonfiles/searchbar.php';
 ?>
 <head>
 	<link rel="stylesheet" href="./Design/manual/css/userprofile.css" />
@@ -19,7 +20,6 @@ $(".btn-pref .btn").click(function () {
 });
 </script>
 <div class="container">
-<div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
         <div class="card-background">
             <img class="card-bkimg" alt="" src="Design/Images/dev.jpg">
@@ -31,9 +31,8 @@ $(".btn-pref .btn").click(function () {
         <div class="card-info"> <span class="card-title"><?php echo $login_session; ?></span>
         	<!--<span><a href="logout.php">LOG out</a></span>-->
         </div>
-    </div>
  </div>	
- </div>
+
    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
@@ -60,7 +59,6 @@ $(".btn-pref .btn").click(function () {
             </button>
         </div>
 	</div>
-</div>
 
   <div class="well">
       <div class="tab-content">
@@ -214,6 +212,7 @@ $(".btn-pref .btn").click(function () {
 		</table>
         </div>
       </div>
+    </div>
     </div>
     <!--<?php
     $var = $_COOKIE['auth_username'];

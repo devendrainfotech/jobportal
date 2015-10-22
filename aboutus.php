@@ -5,6 +5,7 @@
 		//include_once './Development/commonfiles/searchbar.php';
 		//include_once './Development/commonfiles/footer.php';
 	?>
+	<title> About Us</title>
 	<div class="aboutus-settings">
 		<div class="container">
 		<div class="row admin-about-details">

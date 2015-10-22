@@ -198,14 +198,14 @@ include_once './Development/commonfiles/searchbar.php';
 			<!--<label for="exampleInputPassword1">Password:</label>-->
 			<input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
 			</div>
-				  <div>
+				 <!-- <div>
 				    <label>
 				      <input type="checkbox" name="rememberme" value="1"> Remember me
 				    </label>
-				  </div>
+				 </div>-->
 				  <div>
 				    <label>
-				      <a>Forgot your password ?</a></center>
+				      <a href="#">Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				  <center><input type="submit" name="userLoginSubmit" class="btn btn-success" value="Sign In"/></center>

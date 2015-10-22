@@ -19,6 +19,7 @@ $(".btn-pref .btn").click(function () {
 });
 });
 </script>
+<div class="container">
 <div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
         <div class="card-background">
@@ -428,6 +429,7 @@ $(".btn-pref .btn").click(function () {
 	echo $var;
 	echo "signed up";
     ?>-->
+    </div>
     <?php
     include_once './Development/commonfiles/footer.php';
     ?>
