@@ -1,5 +1,5 @@
 <?php
-include_once './Development/commonfiles/connection.php';
+/*include_once './Development/commonfiles/connection.php';
 $user_name_cookie = $_COOKIE['auth_username'];
 $user_pass_cookie = $_COOKIE['auth_password']; // md5 generated key
 //echo $user_pass_cookie;
@@ -21,5 +21,5 @@ if($cookie_row !== 1){
 }
 else{
 	//echo "runs perfectly";
-}
+}*/
 ?>

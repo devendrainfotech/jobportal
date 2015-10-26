@@ -3,7 +3,7 @@
 	//include_once 'userLoginVerify.php';// includes the login script
 	//include_once 'recruiterLoginVerify.php';
 	if(isset($_SESSION['login_recruiter'])){
-		header("location: recruiter_profile.php");
+		header("location: recruiterhomepage.php");
 	}
 	if(isset($_SESSION['login_user'])){
 		header("location: user_profile.php");
@@ -110,7 +110,7 @@ include_once './Development/commonfiles/searchbar.php';
   <label class="col-md-4 control-label" for="selectbasic">City</label>
   <div class="col-md-8">
     <select id="selectbasic" name="recruitercmpcity" class="form-control">
-<option value="Mumbai">Mumbai</option>
+		<option value="Mumbai">Mumbai</option>
 		<option value="Bangalore">Bangalore</option>
 		<option value="Hyderabad">Hyderabad</option>
 		<option value="Ahmedabad">Ahmedabad</option>
@@ -211,9 +211,9 @@ include_once './Development/commonfiles/searchbar.php';
 				    <input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="recruiterPassword" placeholder="Enter Password" required="">
 				  </div>
 				  <div>
-				    <label>
+				    <!--<label>
 				      <input type="checkbox" name="rememberme" value="1"> Remember me
-				    </label>
+				    </label>-->
 				  </div>
 				  <div>
 				    <label>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2015 at 04:51 PM
+-- Generation Time: Oct 26, 2015 at 06:34 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -28,41 +28,42 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `adminmst` (
   `admin_name` varchar(30) DEFAULT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(30) NOT NULL,
+  `email_id` varchar(35) NOT NULL,
+  `contact_no` varchar(13) NOT NULL,
+  `img` varchar(30) NOT NULL,
+  `location` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `adminmst`
 --
 
-INSERT INTO `adminmst` (`admin_name`, `password`) VALUES
-('dilip', 'dilip'),
-('dilip', 'dilip');
+INSERT INTO `adminmst` (`admin_name`, `password`, `email_id`, `contact_no`, `img`, `location`) VALUES
+('Dilip', 'dilip', 'dalwadi.dilip12@gmail.com', '8866120701', 'img/dilip.jpg', 'Morbi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `countries`
+-- Table structure for table `contactmst`
 --
 
-CREATE TABLE IF NOT EXISTS `countries` (
-  `Keyword` varchar(40) NOT NULL,
-  `name_en` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `contactmst` (
+`contactid` int(7) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `mobile` int(15) NOT NULL,
+  `message` varchar(250) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `countries`
+-- Dumping data for table `contactmst`
 --
 
-INSERT INTO `countries` (`Keyword`, `name_en`) VALUES
-('computer', 'ahmedabad'),
-('computer', 'mumbai'),
-('developer', 'ahmedabad'),
-('developer', 'pune'),
-('computer', 'ahmedabad'),
-('computer', 'mumbai'),
-('developer', 'ahmedabad'),
-('developer', 'pune');
+INSERT INTO `contactmst` (`contactid`, `firstname`, `lastname`, `email`, `mobile`, `message`) VALUES
+(1, 'asdas', 'asdasd', 'asdasdas@gmail.com', 1234567889, 'sadasdasds'),
+(2, 'asdas', 'asdasd', 'asdasdas@gmail.com', 1234567889, 'sadasdasds');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,16 @@ CREATE TABLE IF NOT EXISTS `tblcitymst` (
 `cityid` int(7) NOT NULL,
   `name` varchar(30) NOT NULL,
   `stateid` int(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='city master table';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='city master table';
+
+--
+-- Dumping data for table `tblcitymst`
+--
+
+INSERT INTO `tblcitymst` (`cityid`, `name`, `stateid`) VALUES
+(1, 'Ahmedabad', 1),
+(2, 'Delhi', 10),
+(3, 'Mumbai', 12);
 
 -- --------------------------------------------------------
 
@@ -198,18 +208,29 @@ CREATE TABLE IF NOT EXISTS `tbljobmst` (
   `end_package` decimal(5,0) NOT NULL,
   `isactive` tinyint(1) NOT NULL,
   `No_vacanies` int(5) NOT NULL,
-  `recrutierid` int(7) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `recruiterid` int(7) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbljobmst`
 --
 
-INSERT INTO `tbljobmst` (`jobid`, `recstatus`, `jobcreatedate`, `jobenddate`, `jobdesignation`, `jobdescription`, `jobskill`, `workexp`, `qualification`, `locationofhiring`, `companyname`, `start_package`, `end_package`, `isactive`, `No_vacanies`, `recrutierid`) VALUES
+INSERT INTO `tbljobmst` (`jobid`, `recstatus`, `jobcreatedate`, `jobenddate`, `jobdesignation`, `jobdescription`, `jobskill`, `workexp`, `qualification`, `locationofhiring`, `companyname`, `start_package`, `end_package`, `isactive`, `No_vacanies`, `recruiterid`) VALUES
 (1, 0, '0000-00-00', '0000-00-00', 'Web developer', 'We want web developer for part time hiring the solution and for work around the around the clock and see that he manages time as well as employee..', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', '1', '5', 0, 0, 0),
 (2, 0, '0000-00-00', '0000-00-00', 'Web Developer', 'sdf  vd vasf asas fvas va va v advcdacvzcv  zvz vz vzv v dzvzdvz z vdvdvd vd  vdd vdv dv ', 'JAVA, C++', 7, 'BCA', 'mumbai', 'apana sony pvt ltd', '0', '0', 0, 0, 0),
 (3, 0, '0000-00-00', '0000-00-00', 'Web Master', 'sdf  vd vasf asas fvas va va v advcdacvzcv  zvz vz vzv v dzvzdvz z vdvdvd vd  vdd vdv dv ', 'JAVA, C++', 10, 'Bcom', 'ahmedabad', 'apana sony pvt ltd', '0', '0', 0, 0, 0),
-(4, 0, '0000-00-00', '0000-00-00', 'Web developer', 'We want web developer for part time hiring the solution and for work around the around the clock and see that he manages time as well as employee..', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', '0', '0', 0, 0, 0);
+(4, 0, '0000-00-00', '0000-00-00', 'Web developer', 'We want web developer for part time hiring the solution and for work around the around the clock and see that he manages time as well as employee..', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', '0', '0', 0, 0, 0),
+(5, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 2, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(6, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '1', '1', 0, 0, 0),
+(7, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(8, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(9, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(10, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(11, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(13, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 0, 'dasdasd', 'asdasd', 'asdasd', '0', '0', 0, 0, 0),
+(14, 0, '0000-00-00', '0000-00-00', 'asdasd', 'Entire Description about job', 'adasd', 1, 'dasdasd', 'asdasd', 'abc', '2', '1', 0, 0, 0),
+(15, 0, '0000-00-00', '0000-00-00', 'software dev', 'aDADAHDKAJS', 'JAVA,PHP', 2, 'MCA', 'Ahmedabad', 'devinfotech', '1', '3', 0, 0, 0),
+(17, 0, '0000-00-00', '0000-00-00', 'Web Developer and Designer', 'Entire Description about job', 'Accountant', 2, 'MCA', 'Ahmedabad', 'Infosis pvt ltd', '2', '3', 0, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -248,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `tbljobseekermst` (
   `user_password` varchar(30) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
-  `Mobileno` int(12) NOT NULL,
+  `Mobileno` bigint(12) NOT NULL,
   `emailid` varchar(30) NOT NULL,
   `dateofbirth` date NOT NULL,
   `resume_headline` varchar(200) NOT NULL,
@@ -257,19 +278,27 @@ CREATE TABLE IF NOT EXISTS `tbljobseekermst` (
   `functional_area` int(11) NOT NULL COMMENT 'Or Industry ',
   `key_skill` varchar(50) NOT NULL,
   `role` varchar(30) NOT NULL,
+  `user_state` varchar(40) NOT NULL,
+  `user_city` varchar(30) NOT NULL,
   `profile_summary` varchar(400) NOT NULL,
   `Gender` char(1) NOT NULL,
   `contact_id` int(7) NOT NULL,
   `sec_que` varchar(100) NOT NULL,
   `sec_ans` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Job seeker application information table';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='Job seeker application information table';
 
 --
 -- Dumping data for table `tbljobseekermst`
 --
 
-INSERT INTO `tbljobseekermst` (`jobseeker_id`, `create_date`, `username`, `user_password`, `firstname`, `lastname`, `Mobileno`, `emailid`, `dateofbirth`, `resume_headline`, `cityid`, `totalexpyear`, `functional_area`, `key_skill`, `role`, `profile_summary`, `Gender`, `contact_id`, `sec_que`, `sec_ans`) VALUES
-(1, '0000-00-00', 'devendrainfotech@gmail.com', '1234567890', 'Devendra', 'Yadav', 1234567890, '     devendrainfotech2@gmail.c', '1993-09-03', '                  I have 5 Year Exp in Software Development                  ', 5, 5, 1, 'ASP.NET , JAVA , Sql Sever, C#', '6', 'Profile Summary', 'M', 1, '', '');
+INSERT INTO `tbljobseekermst` (`jobseeker_id`, `create_date`, `username`, `user_password`, `firstname`, `lastname`, `Mobileno`, `emailid`, `dateofbirth`, `resume_headline`, `cityid`, `totalexpyear`, `functional_area`, `key_skill`, `role`, `user_state`, `user_city`, `profile_summary`, `Gender`, `contact_id`, `sec_que`, `sec_ans`) VALUES
+(1, '0000-00-00', 'devendrainfotech@gmail.com', '1234567890', 'Devendra', 'Yadav', 1234567890, '     devendrainfotech2@gmail.c', '1993-09-03', '                  I have 5 Year Exp in Software Development                  ', 5, 5, 1, 'ASP.NET , JAVA , Sql Sever, C#', '6', '', '', 'Profile Summary', 'M', 1, '', ''),
+(2, '0000-00-00', 'dev1234@gmail.com', '1234567890', '', '', 0, '', '0000-00-00', '', 0, 0, 0, '', '', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0, '', ''),
+(3, '0000-00-00', 'devendrainfotech1@gmail.com', '1234567890', '', '', 0, '', '0000-00-00', '', 0, 0, 0, '', '', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0, '', ''),
+(4, '0000-00-00', 'dalwadi.dilip123@gmail.com', '1234567890', '', '', 0, '', '0000-00-00', '', 0, 0, 0, '', '', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0, '', ''),
+(5, '0000-00-00', '123@gmail.com', '1234567890', '', '', 0, '', '0000-00-00', '', 0, 0, 0, '', '', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0, '', ''),
+(6, '0000-00-00', '1234@gmail.com', '1234567890', '', '', 0, '', '0000-00-00', '', 0, 0, 0, '', '', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0, '', ''),
+(7, '0000-00-00', 'dalwadi.dilip12345@gmail.com', '1234567890', '', '', 2147483647, '', '0000-00-00', '', 0, 0, 0, '', '', 'Gujarat', 'Ahmedabad', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -288,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `tblloginmst` (
   `sec_question` varchar(100) NOT NULL,
   `sec_asnwer` varchar(50) NOT NULL,
   `rec_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 COMMENT='login table information';
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COMMENT='login table information';
 
 --
 -- Dumping data for table `tblloginmst`
@@ -310,7 +339,9 @@ INSERT INTO `tblloginmst` (`login_id`, `create_date`, `fullname`, `username`, `u
 (17, '0000-00-00', '', 'devenddrainfotech@gmail.com', 'd', '', '', '', '', 0),
 (18, '0000-00-00', '', 'devendrainfot1ech@gmail.com', '1234567890', 'Andaman and Nicobar Islands', '', '', '', 0),
 (19, '0000-00-00', '', 'dev123@gmail.com', '1234567890', 'Goa', 'Pune', '', '', 0),
-(20, '0000-00-00', '', '123@gmail.com', '12345678', 'Gujarat', 'Ahmedabad', '', '', 0);
+(20, '0000-00-00', '', '123@gmail.com', '12345678', 'Gujarat', 'Ahmedabad', '', '', 0),
+(21, '0000-00-00', '', 'darshak123@gmail.com', 'qwertyuiop', 'Gujarat', 'Ahmedabad', '', '', 0),
+(22, '0000-00-00', '', 'dev1234@gmail.com', '1234567890', 'Andaman and Nicobar Islands', 'Mumbai', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -332,18 +363,31 @@ CREATE TABLE IF NOT EXISTS `tblphotomst` (
 
 CREATE TABLE IF NOT EXISTS `tblrecruitermst` (
 `recruiterid` int(7) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `create_date` date NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `middlename` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `dateofbirth` date NOT NULL,
-  `current_company` varchar(50) NOT NULL,
+  `company` varchar(50) NOT NULL,
+  `companyaddress` varchar(100) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `mobilenumber` bigint(12) NOT NULL,
   `designation` varchar(20) NOT NULL COMMENT 'role',
   `current_location` varchar(30) NOT NULL,
   `hiringfor` int(11) NOT NULL COMMENT 'Hiring header information',
   `skill` int(11) NOT NULL COMMENT 'skill /specialist in perticular aera',
   `contact_id` int(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='recruiter information';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='recruiter information';
+
+--
+-- Dumping data for table `tblrecruitermst`
+--
+
+INSERT INTO `tblrecruitermst` (`recruiterid`, `username`, `password`, `create_date`, `firstname`, `middlename`, `lastname`, `dateofbirth`, `company`, `companyaddress`, `state`, `city`, `mobilenumber`, `designation`, `current_location`, `hiringfor`, `skill`, `contact_id`) VALUES
+(2, 'devendrainfotech12@gmail.com', 'Dd12345678', '0000-00-00', '', '', '', '0000-00-00', 'Infosis', 'there is no other way', 'Gujarat', 'Ahmedabad', 9724069187, '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -432,9 +476,45 @@ INSERT INTO `tbl_list_mst` (`autoid`, `Type`, `Value`) VALUES
 (7, 'Designation', 'Database administrator'),
 (8, 'Designation', 'Software Analyst');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userjobapplication`
+--
+
+CREATE TABLE IF NOT EXISTS `userjobapplication` (
+`appid` int(7) NOT NULL,
+  `jobid` int(11) NOT NULL,
+  `jobdesignation` varchar(100) NOT NULL,
+  `jobskill` varchar(50) NOT NULL,
+  `workexp` int(7) NOT NULL,
+  `qualification` varchar(50) NOT NULL,
+  `locationofhiring` varchar(50) NOT NULL,
+  `company` varchar(50) NOT NULL,
+  `AScon` int(1) NOT NULL,
+  `jobseekerid` int(7) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userjobapplication`
+--
+
+INSERT INTO `userjobapplication` (`appid`, `jobid`, `jobdesignation`, `jobskill`, `workexp`, `qualification`, `locationofhiring`, `company`, `AScon`, `jobseekerid`) VALUES
+(26, 1, 'Web developer', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', 1, 0),
+(30, 4, 'Web developer', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', 1, 0),
+(31, 3, 'Web Master', 'JAVA, C++', 10, 'Bcom', 'ahmedabad', 'apana sony pvt ltd', 1, 1),
+(32, 1, 'Web developer', 'c++, JAVA, PHP', 5, 'MCA', 'Ahmedabad', 'Krishana Texpa Techonlogy Pvt. Ltd.', 1, 1),
+(33, 16, 'Web Developer', 'Accountant', 1, 'M.com', 'Banglore', 'Infosis', 1, 0);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contactmst`
+--
+ALTER TABLE `contactmst`
+ ADD PRIMARY KEY (`contactid`);
 
 --
 -- Indexes for table `jobseekerdetail`
@@ -533,9 +613,20 @@ ALTER TABLE `tbl_list_mst`
  ADD PRIMARY KEY (`autoid`);
 
 --
+-- Indexes for table `userjobapplication`
+--
+ALTER TABLE `userjobapplication`
+ ADD PRIMARY KEY (`appid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `contactmst`
+--
+ALTER TABLE `contactmst`
+MODIFY `contactid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `jobseekerdetail`
 --
@@ -555,7 +646,7 @@ MODIFY `applicationid` int(7) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tblcitymst`
 --
 ALTER TABLE `tblcitymst`
-MODIFY `cityid` int(7) NOT NULL AUTO_INCREMENT;
+MODIFY `cityid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tblcontactmst`
 --
@@ -565,7 +656,7 @@ MODIFY `contact_id` int(7) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tbljobmst`
 --
 ALTER TABLE `tbljobmst`
-MODIFY `jobid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `jobid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `tbljobseekerdetails`
 --
@@ -575,17 +666,17 @@ MODIFY `Autoid` int(7) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tbljobseekermst`
 --
 ALTER TABLE `tbljobseekermst`
-MODIFY `jobseeker_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `jobseeker_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tblloginmst`
 --
 ALTER TABLE `tblloginmst`
-MODIFY `login_id` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+MODIFY `login_id` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `tblrecruitermst`
 --
 ALTER TABLE `tblrecruitermst`
-MODIFY `recruiterid` int(7) NOT NULL AUTO_INCREMENT;
+MODIFY `recruiterid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_jobseeker_exp_details`
 --
@@ -601,6 +692,11 @@ MODIFY `autoid` int(5) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `tbl_job_seeker_proj_details`
 MODIFY `autoid` int(5) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `userjobapplication`
+--
+ALTER TABLE `userjobapplication`
+MODIFY `appid` int(7) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -69,7 +69,7 @@ $(".btn-pref .btn").click(function () {
                         <h3 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion"      href="#collapseOne">
                             Personal Information</a>
-                        </H3>
+                        </h3>
                     </div>
 
                     

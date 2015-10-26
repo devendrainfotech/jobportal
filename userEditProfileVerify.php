@@ -1,6 +1,7 @@
 <?php
-	include './Development/commonfiles/connection.php';
 	include_once './userSession.php';
+	/* this thing will be changed by the darshak so i will not editing this now...*/
+    include './Development/commonfiles/connection.php';
     include_once 'Development/commonfiles/general_function.php';
 	if(isset($_POST['userBasicSaveButton'])){
         $jobseeker_id=$_SESSION['Userid'];

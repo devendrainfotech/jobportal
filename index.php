@@ -13,7 +13,7 @@ if(isset($_SESSION['login_user'])){
 	//echo"workin!!!";
 }
 else if(isset($_SESSION['login_recruiter'])){
-	header("location: recruiter_profile.php");
+	header("location: recruiterhomepage.php");
 }
 /*else{
 	echo "not sended to the profile page";
@@ -196,7 +196,7 @@ else if(isset($_SESSION['login_recruiter'])){
         <div class="col-md-4">
             <div class="testimonials">
             	<div class="active item">
-                  <blockquote><p>"I appreciate all the work you put into finding legitimate work from home positions, because I worked for months doing the same thing before I found Job Portal. After I joined Job Portal, I got a job and have been working with the company for almost a year now. I recently got a promotion too! FlexJobs is wonderful and thanks for everything! :)"</p></blockquote>
+                  <blockquote><p>"I appreciate all the work you put into finding legitimate work from home positions, because I worked for months doing the same thing before I found Job Portal. After I joined Job Portal, I got a job and have been working with the company for almost a year now. I recently got a promotion too! Job Portal is wonderful and thanks for everything! :)"</p></blockquote>
                   <div class="carousel-info">
                     <img alt="" src="Design/Images/indexdetail/test1.jpg" class="pull-left">
                     <div class="pull-left">
@@ -220,7 +220,6 @@ else if(isset($_SESSION['login_recruiter'])){
                   </div>
                 </div>
             </div>
-      
         </div>
         <div class="col-md-4">
             <div class="testimonials">

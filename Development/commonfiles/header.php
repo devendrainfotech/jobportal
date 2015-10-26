@@ -13,8 +13,7 @@
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
 		<link type="text/css" href="Design/manual/css/testimonials.css" rel="stylesheet"/>
 		<!-- -->
-		<link type="text/css" href="]extra/formvalidation-master/dist/css/formValidation.min.css" rel="stylesheet"/>
-		
+		<link type="text/css" href="Design/validation/formValidation.min.css" rel="stylesheet"/>
 		<!-- -->
 		<!-- All the css files are including ABOVE.... -->
 		<!-- All the JAVASCRIPT files are including BELOW -->		
@@ -24,27 +23,9 @@
 		<!-- All the JAVASCRIPT files are including ABOVE-->
 		<!-- -->
 		<script type="text/javascript" src="Design/bootstrap/js/npm.js"></script>
-		
-		
-		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/formValidation.min.js"></script>
-		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/language/en_US.js"></script>
-		<script type="text/javascript" src="]extra/formvalidation-master/dist/js/framework/bootstrap.min.js"></script>
-		
-		<!-- -->
-	<!--<script>
-	// i gonna add later this code in separate file as soon as works :)
-	// script for the header bar for the highlighted links....
-	// i havve aready debug the follwing script i think there are some issue with the click event we have to try some other event....
-	// take care of that when you add click ebent in jquery click should not open new page or all the thing will be ruined.... :) 
-	$(document).ready(function(){
-		$(".nav .default").click(function(){
-			$(".active").removeClass("active").addClass("default");
-			$(this).removeClass("default").addClass("active");
-		});
-	});
-	// script for the header bar for the highlighted links....
-</script>-->
-	
+		<script type="text/javascript" src="Design/validation/formValidation.min.js"></script>
+		<script type="text/javascript" src="Design/validation/language/en_US.js"></script>
+		<script type="text/javascript" src="Design/validation/framework/bootstrap.min.js"></script>	
 	</head>
 	<body>
 
@@ -62,8 +43,6 @@
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <!--<li class="active"><a href="index.php">Home</a></li>-->
-            
             <li class="default"><a href="recruiter_registration.php">Recruiter</a></li>
             <li class="default"><a href="aboutus.php">About Us</a></li>
             <li class="default"><a href="contactus.php">Contact Us</a></li>
@@ -80,18 +59,16 @@
               </ul>
             </li>-->
           </ul>
-          
 			  	<?php
-			  	if(!empty($_SESSION['login_user'])){
+			  	if(isset($_SESSION['login_user'])){
 			  		include_once 'header_right_with_login.php';
-			  	}else if(!empty($_SESSION['login_recruiter'])){
+			  	}else if(isset($_SESSION['login_recruiter'])){
 					include_once 'recruiter_header_right.php';		
 				}
 				else{
 					include_once 'header_right_without_login.php';
 				}
 			  	?>
-			  	
         </div><!--/.nav-collapse -->
       </div>
     </nav>

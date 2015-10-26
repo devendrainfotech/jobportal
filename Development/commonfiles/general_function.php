@@ -1,7 +1,6 @@
 <?php 
 include_once './Development/commonfiles/connection.php';
-include_once 'userSession.php';
-include_once 'usercookie.php';  
+//include_once 'usercookie.php';  
 
 function jobseekerinfo($conn,$field)
 {

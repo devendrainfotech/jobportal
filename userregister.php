@@ -41,14 +41,14 @@ include_once './Development/commonfiles/searchbar.php';
 <legend style="text-align: center;"><h2>User Registration</h2></legend>
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Email id</label>  
+  <label class="col-md-3 control-label" for="textinput">Email id</label>  
   <div class="col-md-8">
   <input data-fv-field="email" id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Password</label>
+  <label class="col-md-3 control-label" for="passwordinput">Password</label>
   <div class="col-md-8">
     <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
   </div>
@@ -56,7 +56,7 @@ include_once './Development/commonfiles/searchbar.php';
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
+  <label class="col-md-3 control-label" for="passwordinput">Confirm Password</label>
   <div class="col-md-8">
     <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
   </div>
@@ -64,7 +64,7 @@ include_once './Development/commonfiles/searchbar.php';
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">State</label>
+  <label class="col-md-3 control-label" for="selectbasic">State</label>
   <div class="col-md-8">
     <select id="selectbasic" name="userState" class="form-control">
 		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -108,7 +108,7 @@ include_once './Development/commonfiles/searchbar.php';
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">City</label>
+  <label class="col-md-3 control-label" for="selectbasic">City</label>
   <div class="col-md-8">
     <select id="selectbasic" name="userCity" class="form-control">
       	<option value="Mumbai">Mumbai</option>
@@ -163,7 +163,7 @@ include_once './Development/commonfiles/searchbar.php';
 
 <!-- Prepended text-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="prependedtext">Mobile Number</label>
+  <label class="col-md-3 control-label" for="prependedtext">Mobile Number</label>
   <div class="col-md-8">
     <div class="input-group">
       <span class="input-group-addon">+91</span>
@@ -173,7 +173,7 @@ include_once './Development/commonfiles/searchbar.php';
 </div>
 	<!--<p id="error_message" style="color:red;"></p>-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <label class="col-md-3 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button type="submit"id="singlebutton" name="userSubmitForm" class="btn btn-default">Submit</button>
   	<button type="reset"id="singlebutton" name="userResetForm" class="btn btn-default"> Reset </button>
@@ -198,11 +198,6 @@ include_once './Development/commonfiles/searchbar.php';
 			<!--<label for="exampleInputPassword1">Password:</label>-->
 			<input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
 			</div>
-				 <!-- <div>
-				    <label>
-				      <input type="checkbox" name="rememberme" value="1"> Remember me
-				    </label>
-				 </div>-->
 				  <div>
 				    <label>
 				      <a href="#">Forgot your password ?</a></center>

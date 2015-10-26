@@ -5,7 +5,8 @@
 		private $result;
 		
 		function __construct(){
-			$this->con = mysqli_connect("fdb7.biz.ht","1936711_job","jobportal123","1936711_job",3306);
+			//$this->con = mysqli_connect("fdb7.biz.ht","1936711_job","jobportal123","1936711_job",3306);
+			$this->con = mysqli_connect("localhost","root","","jobportal");
 			if(mysqli_connect_errno()){
 				echo "Failed to connect to mysql".mysqli_connect_error();
 			}

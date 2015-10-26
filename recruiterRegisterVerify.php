@@ -1,4 +1,9 @@
 <?php
+include_once './Development/commonfiles/header.php';
+include_once './Development/commonfiles/searchbar.php';
+include_once './Development/commonfiles/message_dialogue_box.php';
+?>
+<?php
 if(isset($_POST['recruiterRegisterButton'])){
     $recruiteremailid = $_POST['recruiteremailid'];
     $recruiterpassword = $_POST['recruiterpswd'];
@@ -13,60 +18,48 @@ include './Development/commonfiles/connection.php';
 
 function registerValidator($username,$pass,$cnfpass,$mobile,$cmp,$address){
 		include './Development/commonfiles/connection.php';
-		$query = "SELECT username FROM recruiterlogin WHERE username='$username'";
+		$query = "SELECT username FROM tblrecruitermst WHERE username='$username'";
 		$result = mysqli_query($conn,$query);		
 		if (mysqli_num_rows($result) > 0) {
-            //return FALSE;
-				echo "username already exist please choose another one";
-				exit;				
+				WarningMessage("Username is Already Exist","The username that you selected is already exist in our database if you already registered you can signup from our home page","you can signin from the Recruiter tab Through home page please refer to the header or footer");
+				return FALSE;				
             }else if($pass !== $cnfpass){
-			//return FALSE;
-				echo "password not matched !!!";
-				exit;
+			ErrorMessage("Password not Matched","Both the Password You inserted on registration time won't match Please enter both password same and try again:)","Goback and Try again");
+			return FALSE;
 			}
-			else if($pass < 8){
-			echo "password must be 8 digit long";
-				exit;
+			else if(strlen($pass) < 8){
+			ErrorMessage("password Length","Password Length At least 8 character Long");
+				return FALSE;
 			}
 			else if(strlen($mobile) != 10){
-			//return FALSE;
-				echo "mobile number must be 10 length digit";
-				exit;
+			ErrorMessage("Mobile no. is not matched with requirement","Please enter the mobile number to be exactly with the 10 digit number","Goback and Try again");
+				return FALSE;
 			}elseif (strpos($username, "@") === FALSE) {
-			//return FALSE;
-				echo "invalid email address";
-				exit;
+			ErrorMessage("Invalid Type Email id","Please enter the email id correctly","go back and try again");
+				return FALSE;
 			}
 			else if(empty($cmp)){
-				echo "company name is empty";
-				exit;
+				ErrorMessage("Company Name is Empty","Please Provide The company name");
+				return FALSE;
 			}
 			else if(strlen($address) <= 10){
-				echo "enter the full address";
-				exit;
+				ErrorMessage("Address Error","The address should be at least 10 character long enough");
 			}else{
 				return TRUE;
 			}
 		}
-registerValidator($recruiteremailid, $recruiterpassword, $recruiterconfirm_password, $recruitermbnumber,$recruitercompanyname,$recruitercompanyadd);
-
-$sqlquery = "INSERT INTO `recruiterlogin`(`username`,`password`,`company`,`companyaddress`,`state`,`city`,`mobilenumber`) VALUES ('$recruiteremailid','$recruiterpassword','$recruitercompanyname','$recruitercompanyadd','$recruiterstate','$recruitercity','$recruitermbnumber')";
+if(registerValidator($recruiteremailid, $recruiterpassword, $recruiterconfirm_password, $recruitermbnumber,$recruitercompanyname,$recruitercompanyadd) === TRUE){ 
+$sqlquery = "INSERT INTO `tblrecruitermst`(`username`,`password`,`company`,`companyaddress`,`state`,`city`,`mobilenumber`) VALUES ('$recruiteremailid','$recruiterpassword','$recruitercompanyname','$recruitercompanyadd','$recruiterstate','$recruitercity','$recruitermbnumber')";
 
 if (mysqli_query($conn, $sqlquery)) {
-    echo "<center><h1> You recruiter have Been Registered Sucessfully </h1> </center>";
-    echo "<hr>";
-    echo "<center><h3><a href ='http://www.jobportal.me.ht/'>Click here</a> to Login Yourself :)</h3></center>";
-} else {
-    echo "Error: " . $sqlquery . "<br>" . mysqli_error($conn);
+    	SuccessMessage("Registered Sucessfully","You have Been Registered Sucessfully Welcome To the Job Portal Please user Header to signin Yourself","THANK YOU:)");
+		echo "<br>";
+    } else {
+    $error = mysqli_error($conn);
+	$errordetail = $sqlquery;
+	ErrorMessage("Registration Error",$error,$sqlquery);
 }
-/*
- * 
-if($conn->query($sqlquery === TRUE)){
-    echo "added sucessfully";
 }
-else{
-    echo "error".$sqlquery." ".$conn->error; 
-}*/
-//$query = INSERT INTO tablename 1,2 values();
 }
+include_once './Development/commonfiles/footer.php';
 ?>
