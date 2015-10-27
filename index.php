@@ -39,19 +39,16 @@ else if(isset($_SESSION['login_recruiter'])){
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li class="" data-target="#myCarousel" data-slide-to="1"></li>
         <li class="" data-target="#myCarousel" data-slide-to="2"></li>
-        <li class="" data-target="#myCarousel" data-slide-to="3"></li>
-        <!--<li class="" data-target="#myCarousel" data-slide-to="4"></li>-->
         
      </ol>
       <div class="carousel-inner" role="listbox">
+        
         <div class="item active">
           <img class="first-slide" src="Design/Images/carousel/image1-carousel.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="header-style">We are first cloud based job portal covering all of your devices</h1>
-              <!--<p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            --></div>
+              </div>
           </div>
         </div>
         
@@ -69,19 +66,7 @@ else if(isset($_SESSION['login_recruiter'])){
             </div>
           </div>
         </div>
-        
-        <div class="item">
-          <img class="first-slide" src="Design/Images/carousel/carousel-image4.png" alt="First slide">
-          <div class="container">
-         <!--   <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-         </div> -->
-          </div>
-        </div>
-        
-        
+              
         <div class="item">
           <img class="second-slide" src="Design/Images/carousel/carousel-image5.png" alt="Second slide">
             <div class="carousel-caption">
@@ -95,16 +80,6 @@ else if(isset($_SESSION['login_recruiter'])){
             </div>
           </div>
         </div>
-        <!--<div class="item">
-          <img class="third-slide img-responsive" src="Design/Images/carousel/carousel-image7.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>-->
       </div>
       
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -239,6 +214,5 @@ else if(isset($_SESSION['login_recruiter'])){
 </div>
 </div>
 <?php
-	//include_once './Development/forms/register_user.php';
 	include_once './Development/commonfiles/footer.php';
 ?>

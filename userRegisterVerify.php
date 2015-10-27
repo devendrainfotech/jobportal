@@ -1,4 +1,10 @@
 <?php
+	include_once './Development/commonfiles/connection.php';
+	include_once './Development/commonfiles/header.php';	
+	include_once './Development/commonfiles/message_dialogue_box.php';		
+?>
+<title>User Register Verification</title>
+<?php
 	if(isset($_POST["userSubmitForm"])){
 	$useremail =  $_POST["userEmailId"];
 	$userpass =  $_POST["userPassword"];
@@ -6,10 +12,9 @@
 	$userstate =  $_POST["userState"];
 	$usercity =  $_POST["userCity"];
 	$usermbno =  $_POST["userMobileNumber"];
+	$usersecque = $_POST["userSecQuestion"];
+	$usersecans = $_POST["userSecurityAnswer"];
 	}
-	include_once './Development/commonfiles/connection.php';
-	include_once './Development/commonfiles/header.php';	
-	include_once './Development/commonfiles/message_dialogue_box.php';		
 	// echo "$useremail"; ==> for checking purpose....
 	function registerValidator($username,$pass,$cnfpass,$mobile){
 		include './Development/commonfiles/connection.php';
@@ -33,7 +38,8 @@
 		}	
 	if(registerValidator($useremail, $userpass, $usercnfpass, $usermbno) === TRUE){
 	// validation of the data....
-	$sqlquery = "INSERT INTO `tbljobseekermst`(`username`,`user_password`,`user_state`,`user_city`,`Mobileno`) VALUES ('$useremail','$userpass','$userstate','$usercity','$usermbno')";	
+	$sqlquery = "INSERT INTO `tbljobseekermst`(`username`,`user_password`,`user_state`,`user_city`,`Mobileno`,`sec_que`,`sec_ans`) VALUES ('$useremail','$userpass','$userstate','$usercity','$usermbno','$usersecque','$usersecans')";
+		
 	if(mysqli_query($conn, $sqlquery)){
 		SuccessMessage("Registered Sucessfully","You have Been Registered Sucessfully Welcome To the Job Portal Please user Header to signin Yourself","THANK YOU:)");
 		echo "<br>";

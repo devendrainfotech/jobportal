@@ -3,6 +3,14 @@ include_once 'userSession.php';
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 include_once './Development/commonfiles/message_dialogue_box.php';		
+?>
+<!--========================================================
+	========================================================
+	This page has been changed by me at the last momment
+============================================================
+============================================================--> 
+<title>Job Apply Verification</title>
+<?php
 //include './Development/commonfiles/connection.php';
 $variableid = $_POST['hiddenjob'];
 //echo $login_id."new";
@@ -23,7 +31,11 @@ if(mysqli_num_rows($dbresult) > 0){
 	//echo "You have Been Already Applied for this job";	
 }
 else{
-$query = "INSERT INTO `userjobapplication`(jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,company,jobseekerid) SELECT jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,companyname,'$login_id' FROM tbljobmst WHERE jobid = '$variableid'";
+
+if(isset($_POST['applyJob'])){
+	
+	
+	$query = "INSERT INTO `userjobapplication`(jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,company,jobseekerid) SELECT jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,companyname,'$login_id' FROM tbljobmst WHERE jobid = '$variableid'";
 if(mysqli_query($conn, $query)){
 	SuccessMessage("Job is been added Successfully","Job has been Aplied and saved into your databse");	
 	//echo "query executed suceesfully";
@@ -33,7 +45,10 @@ else{
 	$error = mysqli_error($conn);
 	ErrorMessage("Error Occured",$error);
 }
-if(isset($_POST['applyJob'])){
+	
+	
+	
+	
 $newquery = "UPDATE `userjobapplication` SET `AScon` = '1' WHERE `jobid` = '$variableid' AND `jobseekerid` = '$login_id'";
 if(mysqli_query($conn, $newquery)){
 	}
@@ -42,7 +57,24 @@ if(mysqli_query($conn, $newquery)){
 	ErrorMessage("Error Occured",$error);
 }
 }
+
+
 else if(isset($_POST['saveJob'])){
+		
+	$query = "INSERT INTO `userjobapplication`(jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,company,jobseekerid) SELECT jobid,jobdesignation,jobskill,workexp,qualification,locationofhiring,companyname,'$login_id' FROM tbljobmst WHERE jobid = '$variableid'";
+if(mysqli_query($conn, $query)){
+	SuccessMessage("Job is been added Successfully","Job has been Aplied and saved into your databse");	
+	//echo "query executed suceesfully";
+}
+else{
+	//echo "query executed unsuceesfully <br>";	
+	$error = mysqli_error($conn);
+	ErrorMessage("Error Occured",$error);
+}
+	
+	
+	
+	
 $newquery = "UPDATE `userjobapplication` SET `AScon` = '0' WHERE `jobid` = '$variableid' AND `jobseekerid` = '$login_id'";	
 if(mysqli_query($conn, $newquery)){
 	

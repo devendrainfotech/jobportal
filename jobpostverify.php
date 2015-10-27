@@ -1,10 +1,11 @@
 <?php
 include_once 'userSession.php';
 include_once './Development/commonfiles/header.php';
-include_once './Development/commonfiles/searchbar.php';
 include_once './Development/commonfiles/message_dialogue_box.php';
 include_once './Development/commonfiles/connection.php';
-
+?>
+<title>Job Post Verification</title>
+<?php
 	if(isset($_POST['recruitereditsave'])){
 		$hiddenjobid = $_POST['jobposthiddenval'];
 		
@@ -132,7 +133,10 @@ include_once './Development/commonfiles/connection.php';
 	<br>
 </div>
 <!--------------------------------------->
-</div>			
+</div>
+<br>
+<br>
+<br>			
 			<?php
 		}
 	}	

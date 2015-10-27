@@ -56,6 +56,5 @@
 
 		</footer>
 <script type="text/javascript" src="Design/manual/javascript/file_last_validation.js"></script>
-
  </body>
 </html>

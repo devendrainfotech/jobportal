@@ -4,6 +4,7 @@ include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 include_once './Development/commonfiles/message_dialogue_box.php';
 ?>
+<title>Search Jobs Results</title>
 <?php
  //include once will be clashed with the  
 if(isset($_GET['searchjobs'])){

@@ -4,9 +4,8 @@
 		header("location:index.php");
 	}
 	include_once './Development/commonfiles/header.php';
-	include_once './Development/commonfiles/searchbar.php';
 	?>
-
+<title>Job Post Edit</title>
 <div class="container">
 	<div class="row">
 <?php
@@ -18,7 +17,7 @@ if(mysqli_num_rows($result) == 1){
 	while($row = mysqli_fetch_assoc($result)){
 
 ?>
-<form class="form-horizontal" method="post" action="jobpostverify.php">
+<form id="defaultForm" class="form-horizontal fv-form fv-form-bootstrap" novalidate="novalidate" method="post" action="jobpostverify.php">
 <fieldset>
 <!-- Form Name -->
 <legend style="text-align: center;">Create News Jobs </legend>
@@ -26,28 +25,28 @@ if(mysqli_num_rows($result) == 1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtEmail">Job Title / Designation</label>  
   <div class="col-md-6">
-  <input required="" value="<?php echo $row['jobdesignation'];?>" id="txttitle" name="recruitertitle" placeholder="Job Title is the first thing applicats see when they search for jobs" class="form-control input-md" required="" type="text">
+  <input required="" data-fv-notempty-message="The Job designation is required and cannot be empty" value="<?php echo $row['jobdesignation'];?>" id="txttitle" name="recruitertitle" placeholder="Job Title is the first thing applicats see when they search for jobs" class="form-control input-md" required="" type="text">
   </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Company Name</label>  
   <div class="col-md-6">
-  <input required="" value="<?php echo $row['companyname'];?>" id="txtskill" name="recruitercmpname" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input required="" data-fv-notempty-message="The Companyname is required and cannot be empty" value="<?php echo $row['companyname'];?>" id="txtskill" name="recruitercmpname" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Location</label>  
   <div class="col-md-6">
-  <input required="" value="<?php echo $row['locationofhiring'];?>" id="txtskill" name="recruiterlocation" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input required="" data-fv-notempty-message="The Location is required and cannot be empty" value="<?php echo $row['locationofhiring'];?>" id="txtskill" name="recruiterlocation" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Qualification</label>  
   <div class="col-md-6">
-  <input required="" value="<?php echo $row['qualification'];?>" id="txtskill" name="recruiterquali" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input required="" data-fv-notempty-message="The Qualification is required and cannot be empty" value="<?php echo $row['qualification'];?>" id="txtskill" name="recruiterquali" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -55,14 +54,14 @@ if(mysqli_num_rows($result) == 1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Job Skill/Keyword</label>  
   <div class="col-md-6">
-  <input required="" value="<?php echo $row['jobskill'];?>" id="txtskill" name="recruiterjobskill" placeholder="Main Keyword or skill required for this job" class="form-control input-md" required="" type="text">
+  <input required="" data-fv-notempty-message="The job/skill is required and cannot be empty" value="<?php echo $row['jobskill'];?>" id="txtskill" name="recruiterjobskill" placeholder="Main Keyword or skill required for this job" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-sm-4 control-label" for="drpExpMin">Work Experience</label>
-  <div class="col-sm-2">
+  <div class="col-sm-3">
     <select id="drpExpMin" name="recruiterexp" class="form-control">
       <option value="0">Min Experience</option>
 	  <option value="f">fresher</option>
@@ -96,7 +95,7 @@ if(mysqli_num_rows($result) == 1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtcompany">Job Description</label>  
   <div class="col-md-6">
-  <textarea value="<?php echo $row['jobdescription'];?>" class="form-control" id="txtdesc" name="recruiterdesc" placeholder="Entire Description about job">Entire Description about job</textarea>
+  <textarea required="" data-fv-notempty-message="The Job Description is required and cannot be empty" value="<?php echo $row['jobdescription'];?>" class="form-control" id="txtdesc" name="recruiterdesc" placeholder="Entire Description about job">Entire Description about job</textarea>
   </div>
 </div>
 <!-- Button (Double) -->

@@ -2,6 +2,7 @@
 	include_once 'userSession.php'; // interactive user such as name and all user session for the verifying that user exist or not....
     include_once 'Development/commonfiles/general_function.php';
 ?>
+<title>Manage Jobs</title>
 <?php
 	include_once './Development/commonfiles/header.php';
 ?>

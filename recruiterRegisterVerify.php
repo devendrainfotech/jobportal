@@ -3,6 +3,7 @@ include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 include_once './Development/commonfiles/message_dialogue_box.php';
 ?>
+<title>Recruiter register Verification</title>
 <?php
 if(isset($_POST['recruiterRegisterButton'])){
     $recruiteremailid = $_POST['recruiteremailid'];
@@ -13,6 +14,8 @@ if(isset($_POST['recruiterRegisterButton'])){
     $recruiterstate = $_POST['recruitercmpstate'];
     $recruitercity = $_POST['recruitercmpcity'];
     $recruitermbnumber = $_POST['recruitermblnum'];
+	$recruitersecque = $_POST['recruiterSecQuestion'];
+	$recruitersecans = $_POST['recruiterSecurityAnswer'];
     //$reccondition = $_POST['reccnd'];
 include './Development/commonfiles/connection.php';
 
@@ -49,7 +52,7 @@ function registerValidator($username,$pass,$cnfpass,$mobile,$cmp,$address){
 			}
 		}
 if(registerValidator($recruiteremailid, $recruiterpassword, $recruiterconfirm_password, $recruitermbnumber,$recruitercompanyname,$recruitercompanyadd) === TRUE){ 
-$sqlquery = "INSERT INTO `tblrecruitermst`(`username`,`password`,`company`,`companyaddress`,`state`,`city`,`mobilenumber`) VALUES ('$recruiteremailid','$recruiterpassword','$recruitercompanyname','$recruitercompanyadd','$recruiterstate','$recruitercity','$recruitermbnumber')";
+$sqlquery = "INSERT INTO `tblrecruitermst`(`username`,`password`,`company`,`companyaddress`,`state`,`city`,`mobilenumber`,`sec_que`,`sec_ans`) VALUES ('$recruiteremailid','$recruiterpassword','$recruitercompanyname','$recruitercompanyadd','$recruiterstate','$recruitercity','$recruitermbnumber','$recruitersecque','$recruitersecans')";
 
 if (mysqli_query($conn, $sqlquery)) {
     	SuccessMessage("Registered Sucessfully","You have Been Registered Sucessfully Welcome To the Job Portal Please user Header to signin Yourself","THANK YOU:)");

@@ -3,7 +3,9 @@
 	include_once './Development/commonfiles/header.php';
 	include_once './Development/commonfiles/searchbar.php';
 	include_once './Development/commonfiles/message_dialogue_box.php';		
-	
+?>
+<title>Contact Us Verify</title>
+<?php	
 	if(isset($_POST['contactSubmit'])){
 		$firstname = $_POST['contactFirstName'];
 		$lastname = $_POST['contactLastName'];

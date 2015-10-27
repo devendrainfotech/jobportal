@@ -7,7 +7,6 @@
 		<link rel="icon" href="Design/Images/icons/tabicon.png" />
 		<!-- All the css files are including here.... -->
 		<link type="text/css" href="Design/manual/css/jquery-ui.min.css" rel="stylesheet"/>
-		<!--<link type="text/css" href="Design/bootstrap/css/bootstrap-theme.css" rel="stylesheet">-->
 		<link type="text/css" href="Design/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/footer-distri.css" rel="stylesheet">
 		<link type="text/css" href="Design/manual/css/style.css" rel="stylesheet"/>
@@ -26,6 +25,7 @@
 		<script type="text/javascript" src="Design/validation/formValidation.min.js"></script>
 		<script type="text/javascript" src="Design/validation/language/en_US.js"></script>
 		<script type="text/javascript" src="Design/validation/framework/bootstrap.min.js"></script>	
+		
 	</head>
 	<body>
 

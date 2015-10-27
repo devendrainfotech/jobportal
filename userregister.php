@@ -2,6 +2,7 @@
 include_once './Development/commonfiles/header.php';
 include_once './Development/commonfiles/searchbar.php';
 ?>
+<title>User Registerration</title>
 <!--<script type="text/javascript">
 	function userValidation(){
 		var x = document.userForm.userPassword.value;
@@ -43,14 +44,14 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-3 control-label" for="textinput">Email id</label>  
   <div class="col-md-8">
-  <input data-fv-field="email" id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
+  <input required="" data-fv-field="email" re id="emailid" name="userEmailId" placeholder="Enter Your Email Id" class="form-control input-md"  type="email">  
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
   <label class="col-md-3 control-label" for="passwordinput">Password</label>
   <div class="col-md-8">
-    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
+    <input data-fv-notempty-message="Password must be at least 8 Character Long" data-fv-different="true" data-fv-different-field="username" data-fv-different-message="The password cannot be the same as username" pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="paswdid" name="userPassword" placeholder="Enter Your Password" class="form-control input-md" required="" type="password">
   </div>
 </div>
 
@@ -58,7 +59,8 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-3 control-label" for="passwordinput">Confirm Password</label>
   <div class="col-md-8">
-    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-notempty-message="The confirm password is required and cannot be empty" data-fv-identical="true" data-fv-identical-field="password" data-fv-identical-message="The password and its confirm are not the same" data-fv-field="confirmPassword"
+ id="conpswdid" name="userConfirmPassword" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
   </div>
 </div>
 
@@ -66,7 +68,7 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-3 control-label" for="selectbasic">State</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="userState" class="form-control">
+    <select data-fv-field="country" data-fv-notempty="" data-fv-notempty-message="The State is Required" id="selectbasic" name="userState" class="form-control">
 		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -110,7 +112,7 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-3 control-label" for="selectbasic">City</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="userCity" class="form-control">
+    <select data-fv-field="country" data-fv-notempty="" data-fv-notempty-message="The City is Required" id="selectbasic" name="userCity" class="form-control">
       	<option value="Mumbai">Mumbai</option>
 		<option value="Bangalore">Bangalore</option>
 		<option value="Hyderabad">Hyderabad</option>
@@ -173,6 +175,25 @@ include_once './Development/commonfiles/searchbar.php';
 </div>
 	<!--<p id="error_message" style="color:red;"></p>-->
 <div class="form-group">
+  <label class="col-md-3 control-label" for="selectbasic">Security Question</label>
+  <div class="col-md-8">
+    <select data-fv-field="country" data-fv-notempty="" data-fv-notempty-message="Security Question is required" id="selectbasic" name="userSecQuestion" class="form-control">
+      	<option value="1">What is Your Pet name</option>
+      	<option value="2">What is Your Mothers Maiden name</option>
+      	<option value="3">What is Your Favorite color</option>
+      	<option value="4">Where are you born at?</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="prependedtext">Security Answer</label>
+    <div class="col-md-8">
+  		<input required="" data-fv-field="text" id="cmpnmeid" name="userSecurityAnswer" placeholder="Enter Your Answer Here" class="form-control input-md" required="" type="text">  
+  </div>
+</div>
+
+<div class="form-group">
   <label class="col-md-3 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button type="submit"id="singlebutton" name="userSubmitForm" class="btn btn-default">Submit</button>
@@ -196,11 +217,11 @@ include_once './Development/commonfiles/searchbar.php';
 			</div>
 			<div class="form-group">
 			<!--<label for="exampleInputPassword1">Password:</label>-->
-			<input data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
+			<input data-fv-notempty-message="The password is required and cannot be empty" data-fv-field="password" pattern="[a-zA-Z0-9]{8}" type="password" class="form-control" id="exampleInputPassword1" name="userPassword" placeholder="Enter Password" required="">
 			</div>
 				  <div>
 				    <label>
-				      <a href="#">Forgot your password ?</a></center>
+				      <a href="userforgotpassword.php">Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				  <center><input type="submit" name="userLoginSubmit" class="btn btn-success" value="Sign In"/></center>

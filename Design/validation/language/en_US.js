@@ -261,7 +261,7 @@
                 }
             },
             regexp: {
-                'default': 'Please enter a value matching the pattern'
+                'default': 'Password min 8 character Long | date format DD/MM/YYYY <br> mobile number must in number and 10 digit'
             },
             remote: {
                 'default': 'Please enter a valid value'

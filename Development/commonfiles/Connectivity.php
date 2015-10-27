@@ -10,9 +10,8 @@
 			if(mysqli_connect_errno()){
 				echo "Failed to connect to mysql".mysqli_connect_error();
 			}
-			echo "<br/>Connected!!<br/>";
-		}
-		
+			//echo "<br/>Connected!!<br/>";
+		}		
 //		function __destruct(){
 //			mysqli_free_result($this->result);
 //			mysqli_close($this->con);

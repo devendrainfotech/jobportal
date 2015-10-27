@@ -2,6 +2,9 @@
 	session_start();
 	include_once './Development/commonfiles/header_temp.php';	
 	include_once './Development/commonfiles/message_dialogue_box.php';
+?>
+<title>Recruiter Login Verification</title>
+<?php
 	$error = "";
 		if(isset($_POST["recruiterLoginSubmit"])){
 			if(empty($_POST["recruiterEmailid"]) || empty($_POST["recruiterPassword"])){

@@ -24,7 +24,7 @@ if(isset($_SESSION['login_recruiter'])){
 	$login_recruiter_session = $session_row['username'];
 	$recruiter_id = $session_row['recruiterid'];
 	
-	
+$_SESSION['recruiter_id']=$recruiter_id;	
 	/* some thinng are remaning here....*/
 }
 // below will close the connection will be lived with the comment....

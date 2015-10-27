@@ -35,7 +35,6 @@
     
   </div>
 </div>
-<?php echo $_REQUEST['stateid']; ?>
 <input type="hidden" name="stateid" value="<?php echo $_REQUEST['stateid']; ?>"/>
 <input type="hidden" name="name" value="<?php echo $_REQUEST['name']; ?>"/>
 
@@ -44,7 +43,7 @@
   <label class="col-md-4 control-label" for="btnSave"></label>
   <div class="col-md-8">
     <button id="btnSave" name="btnSave" class="btn btn-success">Save</button>
-    <button id="btnCancel" name="btnCancel" class="btn btn-danger">Cancel</button>
+    <a class="btn btn-danger" href="GeneralSetting.php">Cancel</a>
   </div>
 </div>
 

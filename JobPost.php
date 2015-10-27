@@ -4,11 +4,11 @@
 		header("location:index.php");
 	}
 	include_once './Development/commonfiles/header.php';
-	include_once './Development/commonfiles/searchbar.php';
 	?>
+<title>Job Post</title>
 <div class="container">
 	<div class="row">
-<form class="form-horizontal" method="post" action="jobpostverify.php">
+<form id="defaultForm" class="form-horizontal fv-form fv-form-bootstrap" novalidate="novalidate" method="post" action="jobpostverify.php">
 <fieldset>
 <!-- Form Name -->
 <legend style="text-align: center;">Create News Jobs </legend>
@@ -16,28 +16,28 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtEmail">Job Title / Designation</label>  
   <div class="col-md-6">
-  <input required="" id="txttitle" name="recruitertitle" placeholder="Job Title is the first thing applicats see when they search for jobs" class="form-control input-md" required="" type="text">
+  <input data-fv-notempty-message="The Job Title is required and cannot be empty" required="" id="txttitle" name="recruitertitle" placeholder="Job Title is the first thing applicats see when they search for jobs" class="form-control input-md" required="" type="text">
   </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Company Name</label>  
   <div class="col-md-6">
-  <input required="" id="txtskill" name="recruitercmpname" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input data-fv-notempty-message="The company name is required and cannot be empty" required="" id="txtskill" name="recruitercmpname" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Location</label>  
   <div class="col-md-6">
-  <input required="" id="txtskill" name="recruiterlocation" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input data-fv-notempty-message="The Location is required and cannot be empty" required="" id="txtskill" name="recruiterlocation" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtSkill">Qualification</label>  
   <div class="col-md-6">
-  <input required="" id="txtskill" name="recruiterquali" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
+  <input data-fv-notempty-message="The qualification is required and cannot be empty" required="" id="txtskill" name="recruiterquali" placeholder="Enter the Company name" class="form-control input-md" required="" type="text">
   </div>
 </div>
 
@@ -53,7 +53,7 @@
 <div class="form-group">
   <label class="col-sm-4 control-label" for="drpExpMin">Work Experience</label>
   <div class="col-sm-2">
-    <select id="drpExpMin" name="recruiterexp" class="form-control">
+    <select data-fv-notempty="" id="drpExpMin" name="recruiterexp" class="form-control">
       <option value="0">Min Experience</option>
 	  <option value="f">fresher</option>
       <option value="1">1</option>
@@ -64,7 +64,7 @@
 	</div>
 	<label class="col-sm-1 control-label" for="drpExpMin">Salary</label>
 	<div class="col-sm-1">
-    <select id="drpExpMin" name="recruiterminsal" class="form-control">
+    <select data-fv-notempty="" id="drpExpMin" name="recruiterminsal" class="form-control">
       <option value="0">Min Salary</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -73,7 +73,7 @@
     </select>
 	</div>
 	<div class="col-sm-1">
-    <select id="drpExpMin" name="recruitermaxsal" class="form-control">
+    <select data-fv-notempty="" id="drpExpMin" name="recruitermaxsal" class="form-control">
       <option value="0">Min Salary</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -86,7 +86,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtcompany">Job Description</label>  
   <div class="col-md-6">
-  <textarea class="form-control" id="txtdesc" name="recruiterdesc" placeholder="Entire Description about job">Entire Description about job</textarea>
+  <textarea data-fv-notempty-message="The Job description is required and cannot be empty" required="" class="form-control" id="txtdesc" name="recruiterdesc" placeholder="Entire Description about job"></textarea>
   </div>
 </div>
 <!-- Button (Double) -->

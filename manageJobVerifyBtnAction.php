@@ -4,6 +4,7 @@ include_once 'Development/commonfiles/header.php';
 include_once 'Development/commonfiles/searchbar.php';
 include_once './Development/commonfiles/message_dialogue_box.php';		
 ?>
+<title>Job Verify</title>
 <?php
 $applicationid = $_POST['savetoapplyfield'];
 $tablegetjobid;
@@ -44,6 +45,7 @@ if(isset($_POST['allinformationbutton'])){
 		while($row = mysqli_fetch_assoc($result)){
 			?>
 			<div class="container">
+				<br>
 	<div class="col-md-7 col-md-offset-3">
 		<div class="job-post-search">
 			<h4><?php echo ucwords($row['jobdesignation']);?></h4>

@@ -200,7 +200,7 @@ $(".btn-pref .btn").click(function () {
 			';}
 	}
 	else{
-		echo "Invalid  !!!!!!!<br/>";
+		echo "<br/>No Result<br/>";
 	}
 
 ?>

@@ -3,7 +3,7 @@
 	include_once './Development/commonfiles/header.php';
 	include_once './Development/commonfiles/searchbar.php';
 ?>
-
+<title>User Change Password</title>
 <br>
 	<div class="container">
       	<div class="col-md-4"><h3 style="float: right;">Signed in as:</h3></div>
@@ -14,7 +14,7 @@
         <label for="inputEmail" class="sr-only">Current Password</label>
         <input name="userCurrentPassword" placeholder="Enter Password" id="inputEmail" class="input-lg form-control" placeholder="Email address" required="" autofocus="" type="password">
         <br>
-        <h2 class="form-signin-heading">Enter Your New Password</h2>
+        <h3 class="form-signin-heading">Enter Your New Password</h3>
         <label for="inputEmail" class="sr-only">Enter Password</label>
         <input name="userNewPassword" placeholder="Enter Password" id="inputEmail" class="input-lg form-control" placeholder="Email address" required="" autofocus="" type="password">
         <br>

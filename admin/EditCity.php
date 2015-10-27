@@ -40,7 +40,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="txtChangedName">Changed State</label>  
   <div class="col-md-5">
-  <Select name="stateid">
+  <Select name="stateid" class="form-control">
 	<?php
 		$query = "select * from tblstatemst";
 		$con = new Connectivity();
@@ -59,7 +59,7 @@
 			}
 		}
 		else{
-			echo "Invalid  !!!!!!!<br/>";
+			echo "<br/>No Result<br/>";
 		}	
 	?>
   </select>
@@ -67,7 +67,6 @@
 </div>
 
 
-<?php echo $_REQUEST['stateid']; ?>
 <input type="hidden" name="cityid" value="<?php echo $_REQUEST['cityid']; ?>"/>
 <input type="hidden" name="city_name" value="<?php echo $_REQUEST['city_name']; ?>"/>
 

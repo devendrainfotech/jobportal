@@ -1,16 +1,15 @@
 <?php
 	if( count($_REQUEST) > 0){
 	include_once('../Development/commonfiles/Connectivity.php');
-	//$query = "select * from adminmst where admin_name='Dilip'";
+	$query = "Delete from tbl_list_mst where autoid=".$_REQUEST['autoid'];
 	
-	print_r($_REQUEST);
-	$query = "Delete from tblstatemst where stateid=$_REQUEST['stateid']";
-	
-	echo "<br/>".$query;
 	$con = new Connectivity();
-	$con->updateData($query);
-	header('location:GeneralSetting.php?msg=success');
+	$result = $con->updateData($query);
+	echo $result;
+	if( $result > 0 ){
+		//header('location:GeneralSetting.php?msg=success');
 	}else{
-		echo "Directly redirected !!";
+		//header('location:Error.php?msg=Error in saving new state .');
+	}
 	}
 ?>

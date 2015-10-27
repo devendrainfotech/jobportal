@@ -3,6 +3,7 @@
 	include_once './Development/commonfiles/header_temp.php';	
 	include_once './Development/commonfiles/message_dialogue_box.php';
 ?>
+<title>Login Verification</title>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('')

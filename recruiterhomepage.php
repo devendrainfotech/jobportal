@@ -1,9 +1,8 @@
 <?php 
 	include_once 'userSession.php';
 	include_once './Development/commonfiles/header.php';
-	include_once './Development/commonfiles/searchbar.php';
 ?>
-
+<title>Recruiter Home Page</title>
 <!-- <a href="logout.php">LOG OUT</a> -->
 <br>
 <div class="container">
@@ -19,7 +18,6 @@
 	</div>
 	<br>
 	<div class="row">
-		
 		<div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -85,6 +83,9 @@
         				
 	</div>
 </div>
+<br>
+<br>
+<br>
 <?php 
 	include_once './Development/commonfiles/footer.php';
 ?>

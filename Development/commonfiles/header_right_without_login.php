@@ -23,7 +23,7 @@
 				 </div>-->
 				  <div>
 				    <label>
-				      <a href="#">Forgot your password ?</a></center>
+				      <a href="userforgotpassword.php">Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				  <li role="separator" class="divider"></li>

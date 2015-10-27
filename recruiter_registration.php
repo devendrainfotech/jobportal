@@ -23,7 +23,7 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-<form id="defaultForm" name="userForm" class="form-horizontal fv-form fv-form-bootstrap" method="post" action="recruiterRegisterVerify.php">
+<form name="userForm" id="defaultForm"  class="form-horizontal fv-form fv-form-bootstrap" method="post" action="recruiterRegisterVerify.php">
 <fieldset>
 <!-- Form Name -->
 <legend style="text-align: center;"><h2>Recruiter Registration</h2></legend>
@@ -38,14 +38,14 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Password</label>
   <div class="col-md-8">
-    <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" data-fv-field="password" id="paswdid" name="recruiterpswd" placeholder="Enter Your Password" class="form-control input-md" required="" type="password" title="enter password 8char long">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="paswdid" name="recruiterpswd" placeholder="Enter Your Password" class="form-control input-md" required="" type="password" title="enter password 8char long">
   </div>
 </div>
 <!-- Password input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
   <div class="col-md-8">
-    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="password" id="conpswdid" name="recruitercnfpswd" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
+    <input pattern="[a-zA-Z0-9]{8}" data-fv-field="confirmPassword" id="conpswdid" name="recruitercnfpswd" placeholder="Please Enter Your Password Again" class="form-control input-md" required="" type="password">
   </div>
 </div>
 <!-- Text input-->
@@ -59,14 +59,14 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Company Address</label>
   <div class="col-md-8">                     
-    <textarea class="form-control" id="cmpaddid" name="recruitercmpadd">default text</textarea>
+    <textarea class="form-control" id="cmpaddid" placeholder="enter the address" required="" name="recruitercmpadd"></textarea>
   </div>
 </div>
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">State</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="recruitercmpstate" class="form-control">
+    <select data-fv-notempty-message="The country is required"data-fv-notempty=""data-fv-field="country" id="selectbasic" name="recruitercmpstate" class="form-control">
       <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -109,7 +109,7 @@ include_once './Development/commonfiles/searchbar.php';
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">City</label>
   <div class="col-md-8">
-    <select id="selectbasic" name="recruitercmpcity" class="form-control">
+    <select data-fv-notempty-message="The country is required"data-fv-notempty=""data-fv-field="country" id="selectbasic" name="recruitercmpcity" class="form-control">
 		<option value="Mumbai">Mumbai</option>
 		<option value="Bangalore">Bangalore</option>
 		<option value="Hyderabad">Hyderabad</option>
@@ -170,6 +170,24 @@ include_once './Development/commonfiles/searchbar.php';
     </div>
   </div>
 </div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Security Question</label>
+  <div class="col-md-8">
+    <select data-fv-notempty-message="Please enter sec question"data-fv-notempty=""data-fv-field="country" id="selectbasic" name="recruiterSecQuestion" class="form-control">
+      	<option value="1">What is Your Pet name</option>
+      	<option value="2">What is Your Mothers Maiden name</option>
+      	<option value="3">What is Your Favorite color</option>
+      	<option value="4">Where are you born at?</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext">Security Answer</label>
+    <div class="col-md-8">
+  		<input id="cmpnmeid" name="recruiterSecurityAnswer" placeholder="Enter Your Answer Here" class="form-control input-md" required="" type="text">  
+  </div>
+</div>
 
 <!-- Multiple Checkboxes 
 <div class="form-group">
@@ -217,7 +235,7 @@ include_once './Development/commonfiles/searchbar.php';
 				  </div>
 				  <div>
 				    <label>
-				      <a>Forgot your password ?</a></center>
+				      <a href="recruiterforgotpassword.php">Forgot your password ?</a></center>
 				    </label>
 				  </div>
 				 <!-- <li role="separator" class="divider"></li>-->
